@@ -19,3 +19,9 @@
   color: var(--color-primary);
   text-decoration: underline;
 }
+
+.demoHint {
+  font-size: var(--fs-small);
+  text-align: center;
+  color: var(--color-dark-grey);
+}

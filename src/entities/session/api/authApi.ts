@@ -77,10 +77,10 @@ export async function checkEmailAvailable(email: string): Promise<void> {
   }
 }
 
-/** Any 6-digit code is accepted except 000000, which emulates a wrong code. */
+/** Mock: e-mails aren't sent yet, so any 6-digit code is accepted. */
 export async function verifyEmailCode(code: string): Promise<void> {
   await delay(500);
-  if (!/^\d{6}$/.test(code) || code === '000000') throw new ApiError('Неверный код подтверждения', 400);
+  if (!/^\d{6}$/.test(code)) throw new ApiError('Неверный код подтверждения', 400);
 }
 
 export async function resendEmailCode(): Promise<void> {
