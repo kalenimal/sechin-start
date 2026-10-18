@@ -1,0 +1,29 @@
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background: var(--color-background);
+  border-radius: var(--radius-m);
+}
+
+.groupTitle {
+  font-size: var(--fs-h6);
+}
+
+.groupHint {
+  margin-top: -10px;
+  font-size: var(--fs-caption);
+  color: var(--color-dark-grey);
+}
+
+.submit {
+  margin-top: 20px;
+}

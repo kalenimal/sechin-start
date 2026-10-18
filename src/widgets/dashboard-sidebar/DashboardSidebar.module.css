@@ -1,0 +1,164 @@
+.sidebar {
+  position: sticky;
+  top: var(--shell-pad, 40px);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: clamp(232px, 16vw, 263px);
+  height: calc(100vh - var(--shell-pad, 40px) * 2);
+  min-height: 520px;
+}
+
+.logo {
+  align-self: center;
+  margin: clamp(4px, 2vh, 20px) 0 clamp(20px, 4vh, 40px);
+}
+
+.account {
+  display: flex;
+  gap: 10px;
+  margin-bottom: clamp(20px, 4vh, 40px);
+}
+
+.user {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  height: 50px;
+  padding: 4px 10px 4px 4px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  background: var(--color-white-40);
+  border: 1px solid transparent;
+  border-radius: var(--radius-m);
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.user:hover {
+  background: var(--color-white);
+}
+
+.userActive,
+.userActive:hover {
+  background: var(--color-primary-5);
+  border-color: var(--color-primary-40);
+}
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  font-size: var(--fs-caption);
+  color: var(--color-white);
+  background: var(--color-secondary);
+  border-radius: 6px;
+}
+
+.email {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--color-dark-grey);
+}
+
+.bell {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: var(--color-white-40);
+  border: 1px solid transparent;
+  border-radius: var(--radius-m);
+  transition: background-color 0.15s ease;
+}
+
+.bell:hover {
+  background: var(--color-white);
+}
+
+.bellActive,
+.bellActive:hover {
+  background: var(--color-primary-5);
+  border-color: var(--color-primary-40);
+}
+
+.bell svg {
+  width: 24px;
+  height: 24px;
+}
+
+.badge {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-white);
+  background: var(--color-red);
+  border-radius: 50%;
+  animation: pop 360ms var(--ease-out);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.help {
+  margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+
+  .logo {
+    margin: 0 0 20px;
+  }
+
+  .account {
+    margin-bottom: 20px;
+  }
+
+  .nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .nav > * {
+    flex: 0 0 auto;
+  }
+
+  .help {
+    display: none;
+  }
+}

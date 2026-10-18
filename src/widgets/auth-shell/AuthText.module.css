@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: var(--fs-h2);
+}
+
+.description {
+  font-size: var(--fs-paragraph);
+}

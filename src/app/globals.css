@@ -1,33 +1,120 @@
+/* Design tokens — SechinPlatform UI KIT (Figma) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #387184;
+  --color-primary-5: rgba(56, 113, 132, 0.05);
+  --color-primary-10: rgba(56, 113, 132, 0.1);
+  --color-primary-40: rgba(56, 113, 132, 0.4);
+  --color-secondary: #d64933;
+  --color-red: #d92d2d;
+  --color-black: #0d1423;
+  --color-dark-grey: #6d7278;
+  --color-grey: #dfe3e5;
+  --color-grey-hover: #d5d9db;
+  --color-grey-active: #cbcfd1;
+  --color-background: #f2f4f5;
+  --color-background-pressed: #f1f3f4;
+  --color-disabled: #e9edef;
+  --color-white: #ffffff;
+  --color-white-50: rgba(255, 255, 255, 0.5);
+  --color-white-40: rgba(255, 255, 255, 0.4);
+  --color-overlay: rgba(13, 20, 35, 0.4);
+
+  --font-sans: var(--font-ibm-plex-sans), system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --fs-h1: 48px;
+  --fs-h2: 40px;
+  --fs-h3: 32px;
+  --fs-h4: 28px;
+  --fs-h5: 24px;
+  --fs-h6: 20px;
+  --fs-paragraph: 17px;
+  --fs-caption: 15px;
+  --fs-small: 12px;
+
+  --lh-title: 1.1;
+  --lh-text: 1.3;
+  --tracking: -0.02em;
+
+  --radius-s: 5px;
+  --radius-m: 10px;
+  --radius-l: 20px;
+
+  --container: 1820px;
+  --gutter: 50px;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (max-width: 1024px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --fs-h1: 36px;
+    --fs-h2: 32px;
+    --fs-h3: 26px;
+    --gutter: 24px;
   }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --fs-h1: 30px;
+    --fs-h2: 26px;
+    --fs-h3: 22px;
+    --fs-paragraph: 16px;
+    --gutter: 16px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-size: var(--fs-paragraph);
+  line-height: var(--lh-text);
+  letter-spacing: var(--tracking);
+  color: var(--color-black);
+  background: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  line-height: var(--lh-title);
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
 }
 
 a {
@@ -35,8 +122,162 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------------------------------------------------------------- Motion */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 150ms;
+  --duration-base: 240ms;
+  --duration-slow: 420ms;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
   }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-4px);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+  }
+  60% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes grow-y {
+  from {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+  20%,
+  80% {
+    transform: translateX(3px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translateX(-5px);
+  }
+  40%,
+  60% {
+    transform: translateX(5px);
+  }
+}
+
+/** Page content entrance (applied by route templates). */
+.page-enter {
+  animation: fade-up var(--duration-base) var(--ease-out) both;
+}
+
+/** Staggered entrance for lists and grids of cards. */
+.stagger > * {
+  animation: fade-up var(--duration-slow) var(--ease-out) both;
+}
+
+.stagger > :nth-child(2) {
+  animation-delay: 40ms;
+}
+.stagger > :nth-child(3) {
+  animation-delay: 80ms;
+}
+.stagger > :nth-child(4) {
+  animation-delay: 120ms;
+}
+.stagger > :nth-child(5) {
+  animation-delay: 160ms;
+}
+.stagger > :nth-child(6) {
+  animation-delay: 200ms;
+}
+.stagger > :nth-child(7) {
+  animation-delay: 240ms;
+}
+.stagger > :nth-child(n + 8) {
+  animation-delay: 280ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }

@@ -1,0 +1,61 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px 5px 5px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--color-white);
+  border: 1px solid transparent;
+  border-radius: var(--radius-s);
+  transition: border-color 0.15s ease;
+}
+
+.chip:hover {
+  border-color: var(--color-grey);
+}
+
+.checked,
+.checked:hover {
+  border-color: var(--color-secondary);
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.box {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  background: var(--color-background);
+  border-radius: var(--radius-s);
+}
+
+.box svg {
+  opacity: 0;
+}
+
+.checked .box {
+  background: var(--color-secondary);
+}
+
+.checked .box svg {
+  opacity: 1;
+  animation: pop 260ms var(--ease-out);
+}
+
+.input:focus-visible + .box {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

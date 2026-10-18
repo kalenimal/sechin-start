@@ -1,0 +1,31 @@
+.shell {
+  --shell-pad: clamp(16px, 2.2vw, 40px);
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(16px, 1.6vw, 24px);
+  min-height: 100vh;
+  padding: var(--shell-pad);
+  background: var(--color-background);
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  min-height: calc(100vh - var(--shell-pad) * 2);
+  padding: clamp(16px, 1.6vw, 24px);
+  background: var(--color-white);
+  border-radius: var(--radius-m);
+}
+
+@media (max-width: 1024px) {
+  .shell {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .main {
+    width: 100%;
+    min-height: 0;
+    padding: 16px;
+  }
+}

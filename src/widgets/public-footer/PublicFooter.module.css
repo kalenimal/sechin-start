@@ -1,0 +1,24 @@
+.footer {
+  margin-top: 80px;
+  padding: 30px 0;
+  font-size: var(--fs-caption);
+  color: var(--color-dark-grey);
+  background: var(--color-white);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.links a:hover {
+  color: var(--color-black);
+}

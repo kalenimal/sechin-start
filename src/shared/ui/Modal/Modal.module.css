@@ -1,0 +1,132 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+  background: rgba(13, 20, 35, 0.8);
+  animation: fade-in var(--duration-fast) ease;
+}
+
+.overlayClosing {
+  animation: fade-out 180ms ease forwards;
+}
+
+.dialog {
+  position: relative;
+  width: 100%;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 40px 50px 50px;
+  background: var(--color-white);
+  border-radius: var(--radius-m);
+  outline: none;
+  animation: dialog-in var(--duration-base) var(--ease-out);
+}
+
+.dialogClosing {
+  animation: dialog-out 180ms ease-in forwards;
+}
+
+@media (max-width: 640px) {
+  .dialog {
+    padding: 30px 20px 24px;
+  }
+}
+
+.close {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  z-index: 1;
+  display: inline-flex;
+  color: var(--color-white);
+  opacity: 0.6;
+  transition: opacity 0.15s ease;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close svg {
+  width: 40px;
+  height: 40px;
+  stroke-width: 1.5;
+}
+
+@media (max-width: 640px) {
+  .close {
+    top: 12px;
+    right: 12px;
+  }
+
+  .close svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.headingLeft {
+  text-align: left;
+}
+
+.title {
+  font-size: var(--fs-h2);
+}
+
+.description {
+  font-size: var(--fs-paragraph);
+}
+
+.headingLeft .description {
+  font-size: var(--fs-caption);
+  color: var(--color-dark-grey);
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}
+
+@keyframes dialog-out {
+  to {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+
+@media (max-height: 800px) {
+  .dialog {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .heading {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: var(--fs-h3);
+  }
+}

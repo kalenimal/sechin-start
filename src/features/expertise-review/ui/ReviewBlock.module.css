@@ -1,0 +1,157 @@
+.blockWidth {
+  width: 100%;
+}
+
+/* review (expert) */
+.review {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-grey);
+  border-radius: var(--radius-m);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.review:hover {
+  border-color: var(--color-primary-40);
+}
+
+.content {
+  cursor: pointer;
+  outline: none;
+}
+
+.content:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: var(--radius-s);
+}
+
+.hasComment {
+  border-color: var(--color-red);
+}
+
+.editing {
+  width: 100%;
+  border-color: var(--color-primary);
+}
+
+.editor {
+  animation: fade-up var(--duration-fast) var(--ease-out);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: var(--color-background);
+  border-radius: var(--radius-m);
+}
+
+.editorLabel {
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.textarea {
+  min-height: 90px;
+  padding: 0;
+  font-size: var(--fs-small);
+  background: transparent;
+  border: 0;
+  outline: none;
+  resize: vertical;
+}
+
+.textarea::placeholder {
+  color: var(--color-dark-grey);
+}
+
+.editorActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.editorActions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.editorActions button:first-child {
+  color: var(--color-dark-grey);
+}
+
+.editorActions button:last-child {
+  color: var(--color-primary);
+}
+
+.editorActions svg {
+  width: 16px;
+  height: 16px;
+}
+
+.savedComment {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px;
+  font-size: var(--fs-small);
+  text-align: left;
+  color: var(--color-red);
+  background: rgba(217, 45, 45, 0.05);
+  border-radius: var(--radius-s);
+}
+
+.savedComment svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* owner — remark from expert */
+.remarked {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  margin: -10px;
+  background: rgba(217, 45, 45, 0.03);
+  border-left: 2px solid var(--color-red);
+  border-radius: var(--radius-s);
+}
+
+.remarked > :first-child :is(p, span):first-child {
+  color: var(--color-red);
+}
+
+.remark {
+  padding: 10px 15px;
+  background: rgba(217, 45, 45, 0.08);
+  border-radius: var(--radius-m);
+}
+
+.remarkTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-red);
+}
+
+.remarkTitle svg {
+  width: 16px;
+  height: 16px;
+}
+
+.remarkText {
+  margin-top: 6px;
+  font-size: var(--fs-small);
+}

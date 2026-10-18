@@ -1,0 +1,49 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: var(--fs-caption);
+}
+
+.caption {
+  color: var(--color-dark-grey);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.track {
+  position: relative;
+  flex: 1;
+  height: 37px;
+  overflow: hidden;
+  background: var(--color-background);
+  border-radius: var(--radius-s);
+}
+
+.bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--color-primary);
+  border-radius: var(--radius-s);
+  transform-origin: left;
+  animation: grow-x 900ms var(--ease-out) 200ms both;
+}
+
+.value {
+  width: 80px;
+  font-size: var(--fs-h4);
+  font-weight: 500;
+  line-height: var(--lh-title);
+  text-align: right;
+}

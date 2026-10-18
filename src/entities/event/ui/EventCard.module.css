@@ -1,0 +1,146 @@
+.card {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  border: 1px solid var(--color-grey);
+  border-radius: var(--radius-m);
+  transition:
+    border-color var(--duration-fast) ease,
+    box-shadow var(--duration-base) ease;
+}
+
+.card:hover {
+  border-color: var(--color-grey-active);
+  box-shadow: 0 8px 24px rgba(13, 20, 35, 0.06);
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 140px;
+  border-right: 1px solid var(--color-grey);
+}
+
+.day {
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  line-height: var(--lh-title);
+}
+
+.month {
+  font-size: var(--fs-small);
+  color: var(--color-dark-grey);
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  min-width: 0;
+  padding: 10px 5px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-10);
+  border-radius: var(--radius-s);
+}
+
+.badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.badgeDanger {
+  color: var(--color-red);
+  background: rgba(217, 45, 45, 0.1);
+}
+
+.title {
+  width: 100%;
+  overflow: hidden;
+  font-size: var(--fs-h5);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.title a:hover {
+  color: var(--color-primary);
+}
+
+.description {
+  margin-top: -5px;
+  font-size: var(--fs-caption);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  padding: 8px 12px 8px 10px;
+}
+
+.chip :global(span) {
+  font-size: var(--fs-small);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.actions > * {
+  min-width: 157px;
+}
+
+.image {
+  flex-shrink: 0;
+  width: 240px;
+  height: auto;
+  aspect-ratio: 240 / 280;
+  object-fit: cover;
+  border-radius: var(--radius-m);
+  transition: filter var(--duration-base) ease;
+}
+
+.card:hover .image {
+  filter: saturate(1.15) brightness(1.03);
+}
+
+@media (max-width: 1100px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .date {
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-start;
+    width: auto;
+    padding: 5px;
+    border-right: 0;
+  }
+
+  .image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    order: -1;
+  }
+}

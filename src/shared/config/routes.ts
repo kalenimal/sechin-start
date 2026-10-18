@@ -1,0 +1,28 @@
+export const routes = {
+  home: '/',
+  startups: '/startups',
+  startup: (slug: string) => `/startups/${slug}`,
+  startupTab: (slug: string, tab: string) => `/startups/${slug}/${tab}`,
+
+  auth: '/auth',
+  login: '/auth/login',
+  resetPassword: '/auth/reset-password',
+  resetPasswordNew: '/auth/reset-password/new',
+  signUp: (role: string) => `/auth/sign-up/${role}`,
+  signUpStep: (role: string, step: number) => `/auth/sign-up/${role}?step=${step}`,
+  signUpSuccess: '/auth/sign-up/success',
+
+  dashboard: '/dashboard',
+  profile: '/dashboard/profile',
+  notifications: '/dashboard/notifications',
+  project: (id: string) => `/dashboard/projects/${id}`,
+  projectEdit: (id: string) => `/dashboard/projects/${id}/edit`,
+  analytics: '/dashboard/analytics',
+  favourites: '/dashboard/favourites',
+  calendar: '/dashboard/calendar',
+  calendarEvent: (id: string) => `/dashboard/calendar/${id}`,
+  request: (id: string) => `/dashboard/requests/${id}`,
+  communication: '/dashboard/communication',
+  help: '/dashboard/help',
+  myExpertise: '/dashboard/expertise',
+} as const;

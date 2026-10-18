@@ -1,0 +1,72 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.criterion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 10px;
+  background: var(--color-background);
+  border: 0;
+  border-radius: var(--radius-m);
+}
+
+.title {
+  float: left;
+  padding: 0;
+  font-size: var(--fs-paragraph);
+  font-weight: 500;
+}
+
+.hint {
+  clear: both;
+  font-size: var(--fs-small);
+  color: var(--color-dark-grey);
+}
+
+.scale {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 5px;
+}
+
+.score {
+  height: 48px;
+  font-size: var(--fs-small);
+  color: var(--color-dark-grey);
+  background: var(--color-white);
+  border: 1px solid transparent;
+  border-radius: var(--radius-s);
+  transition:
+    background-color 0.1s ease,
+    border-color 0.1s ease;
+}
+
+.score:hover {
+  border-color: var(--color-grey-active);
+}
+
+.good {
+  color: var(--color-primary);
+  background: rgba(56, 113, 132, 0.12);
+  border-color: var(--color-primary-40);
+}
+
+.bad {
+  color: var(--color-red);
+  background: rgba(217, 45, 45, 0.12);
+  border-color: rgba(217, 45, 45, 0.4);
+}
+
+.current {
+  font-weight: 600;
+}
+
+.submit {
+  margin-top: 20px;
+}

@@ -1,0 +1,27 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 15px 10px;
+  font-size: var(--fs-small);
+  text-align: center;
+  background: var(--color-background);
+  border-radius: var(--radius-m);
+}
+
+.hint svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary);
+}
+
+.hintTitle {
+  font-weight: 600;
+}

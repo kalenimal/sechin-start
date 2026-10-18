@@ -1,0 +1,45 @@
+.card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  height: 323px;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+}
+
+.card:hover {
+  filter: drop-shadow(0 10px 24px rgba(13, 20, 35, 0.1));
+  transform: translateY(-3px);
+}
+
+.muted {
+  opacity: 0.4;
+}
+
+.corner {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  border-bottom-right-radius: 6px;
+  transition: transform 0.2s ease;
+  transform-origin: bottom right;
+}
+
+.card:hover .corner {
+  transform: scale(1.25);
+}
+
+.body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding: 30px 20px;
+}

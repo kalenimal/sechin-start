@@ -1,0 +1,126 @@
+.tabs {
+  display: flex;
+}
+
+.tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  line-height: var(--lh-title);
+  white-space: nowrap;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+/* segmented */
+.segmented {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-m);
+  scrollbar-width: none;
+}
+
+.segmented .tab {
+  flex: 1 0 auto;
+  min-width: 120px;
+  padding: 15px 30px;
+  border-right: 1px solid var(--color-background);
+}
+
+.segmented .tab:last-child {
+  border-right: 0;
+}
+
+.segmented .tab:hover {
+  background: var(--color-background);
+}
+
+.segmented .active,
+.segmented .active:hover {
+  background: var(--color-primary-10);
+  border-radius: 9px;
+  border-right-color: transparent;
+}
+
+.segmented .active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--color-primary);
+  animation: grow-x var(--duration-base) var(--ease-out);
+}
+
+/* underline */
+.underline {
+  gap: 20px;
+  border-bottom: 1px solid var(--color-background);
+}
+
+.underline .tab {
+  padding: 0 0 15px;
+}
+
+.underline .active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--color-primary);
+  animation: grow-x var(--duration-base) var(--ease-out);
+}
+
+.underline .count {
+  color: rgba(13, 20, 35, 0.4);
+}
+
+/* pill — expert filters */
+.pill {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-grey);
+  border-radius: var(--radius-m);
+  scrollbar-width: none;
+}
+
+.pill .tab {
+  flex: 1 0 auto;
+  padding: 15px 20px;
+}
+
+.pill .tab:hover {
+  background: var(--color-background);
+}
+
+.pill .active,
+.pill .active:hover {
+  background: var(--color-background);
+  box-shadow: inset 0 -2px 0 var(--color-primary);
+}
+
+.pill .count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  font-size: var(--fs-small);
+  background: var(--color-background);
+  border-radius: 12px;
+}
+
+.pill .active .count {
+  background: var(--color-grey);
+}

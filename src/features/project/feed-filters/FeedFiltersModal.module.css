@@ -1,0 +1,53 @@
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0;
+  padding: 20px;
+  background: var(--color-background);
+  border: 0;
+  border-radius: var(--radius-m);
+}
+
+.groupTitle {
+  float: left;
+  padding: 0;
+  font-size: var(--fs-h6);
+  font-weight: 500;
+  line-height: var(--lh-title);
+}
+
+.groupHint {
+  clear: both;
+  margin-top: -10px;
+  font-size: var(--fs-caption);
+  color: var(--color-dark-grey);
+}
+
+.select :global(button) {
+  border-color: transparent;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.clear {
+  color: var(--color-black);
+}
+
+.clearIcon {
+  width: 24px !important;
+  height: 24px !important;
+  color: var(--color-dark-grey);
+}

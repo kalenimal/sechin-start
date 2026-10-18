@@ -1,0 +1,116 @@
+.label {
+  display: block;
+  font-size: var(--fs-caption);
+}
+
+.hint {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--fs-small);
+  color: var(--color-dark-grey);
+}
+
+.frame {
+  position: relative;
+  overflow: visible;
+  background: var(--color-background);
+  border: 1px solid var(--color-grey);
+  border-radius: var(--radius-m);
+}
+
+.cover {
+  width: 100%;
+  aspect-ratio: 753 / 260;
+}
+
+.logo {
+  width: 160px;
+  height: 160px;
+}
+
+.preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-m);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.empty svg {
+  width: 24px;
+  height: 24px;
+}
+
+.menuWrap {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.editButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--color-dark-grey);
+  background: var(--color-white);
+  border-radius: var(--radius-s);
+  box-shadow: 0 2px 8px rgba(13, 20, 35, 0.08);
+}
+
+.editButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  padding: 5px;
+  background: var(--color-white);
+  border-radius: var(--radius-m);
+  box-shadow: 0 10px 30px rgba(13, 20, 35, 0.12);
+  transform-origin: top right;
+  animation: scale-in var(--duration-fast) var(--ease-out);
+}
+
+.menu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  border-radius: var(--radius-s);
+}
+
+.menu button:hover {
+  background: var(--color-background);
+}
+
+.menu svg {
+  width: 18px;
+  height: 18px;
+}
+
+.danger {
+  color: var(--color-red);
+}

@@ -1,0 +1,39 @@
+.section {
+  padding-top: 50px;
+}
+
+.title {
+  margin-bottom: 30px;
+  font-size: var(--fs-h3);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.grid > li {
+  display: flex;
+}
+
+.grid > li > * {
+  flex: 1;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: 30px;
+  }
+
+  .grid {
+    grid-template-columns: 100%;
+    gap: 16px;
+  }
+}

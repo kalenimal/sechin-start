@@ -1,0 +1,12 @@
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.ruble {
+  font-size: var(--fs-paragraph);
+  font-weight: 600;
+  color: var(--color-black);
+  padding-right: 6px;
+}

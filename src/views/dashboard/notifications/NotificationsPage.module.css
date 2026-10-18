@@ -1,0 +1,13 @@
+.tabs {
+  margin-top: -10px;
+}
+
+.tabs :global(button span:last-child) {
+  color: rgba(13, 20, 35, 0.4);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  margin-top: -10px;
+}

@@ -1,0 +1,55 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-white);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  height: 96px;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.navLink {
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  color: rgba(13, 20, 35, 0.6);
+  transition: color 0.15s ease;
+}
+
+.navLink:hover,
+.navLinkActive {
+  color: var(--color-black);
+}
+
+.login {
+  margin-left: auto;
+  border-radius: var(--radius-m);
+}
+
+@media (max-width: 640px) {
+  .inner {
+    gap: 16px;
+    height: 72px;
+  }
+
+  .inner > a:first-child img {
+    width: 125px;
+    height: auto;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .login {
+    padding: 0 12px;
+  }
+}

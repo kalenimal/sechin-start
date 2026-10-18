@@ -1,0 +1,40 @@
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.legend + * {
+  clear: both;
+}
+
+.options {
+  display: grid;
+  gap: 10px;
+}
+
+.grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.optionLabel {
+  font-weight: 600;
+  line-height: var(--lh-title);
+}

@@ -1,0 +1,64 @@
+.root {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: var(--fs-caption);
+  line-height: var(--lh-text);
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  cursor: inherit;
+}
+
+.box {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--color-background);
+  border-radius: var(--radius-s);
+  transition: background-color 0.15s ease;
+}
+
+.box svg {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.root:hover .box {
+  background: var(--color-grey);
+}
+
+.input:checked + .box {
+  background: var(--color-secondary);
+}
+
+.input:checked + .box svg {
+  opacity: 1;
+  animation: pop 260ms var(--ease-out);
+}
+
+.input:focus-visible + .box {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.label {
+  padding-top: 2px;
+}

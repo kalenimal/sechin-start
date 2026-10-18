@@ -1,0 +1,70 @@
+.panel {
+  position: relative;
+  height: 100%;
+  min-height: 640px;
+  overflow: hidden;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: var(--radius-m);
+  -webkit-mask: url('/images/onboarding-mask.svg') center / 100% 100% no-repeat;
+  mask: url('/images/onboarding-mask.svg') center / 100% 100% no-repeat;
+}
+
+.photo {
+  object-fit: cover;
+  object-position: 40% center;
+  transform: scale(1.09);
+}
+
+.glowTop,
+.glowBottom {
+  position: absolute;
+  pointer-events: none;
+}
+
+.glowTop {
+  left: 4%;
+  top: -306px;
+  width: 1148px;
+  height: 614px;
+}
+
+.glowTop span {
+  position: absolute;
+  inset: -67.38% -36.06%;
+  background: url('/images/onboarding-glow-1.svg') center / 100% 100% no-repeat;
+}
+
+.glowBottom {
+  left: -378px;
+  bottom: -137px;
+  width: 1397px;
+  height: 523px;
+}
+
+.glowBottom span {
+  position: absolute;
+  inset: -79.19% -29.64%;
+  background: url('/images/onboarding-glow-2.svg') center / 100% 100% no-repeat;
+}
+
+.text {
+  position: absolute;
+  left: 50px;
+  right: 50px;
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 598px;
+}
+
+.title {
+  font-size: var(--fs-h1);
+  font-weight: 500;
+  line-height: var(--lh-title);
+}
+
+.description {
+  font-size: var(--fs-paragraph);
+}

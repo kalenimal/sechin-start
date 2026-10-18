@@ -1,0 +1,8 @@
+.error {
+  padding: 12px 15px;
+  font-size: var(--fs-caption);
+  color: var(--color-red);
+  background: rgba(217, 45, 45, 0.08);
+  border-radius: var(--radius-m);
+  animation: fade-up var(--duration-fast) var(--ease-out);
+}

@@ -1,0 +1,1 @@
+export { StartupHero } from './StartupHero';

@@ -1,0 +1,132 @@
+.card {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  border: 1px solid var(--color-grey);
+  border-radius: var(--radius-m);
+  transition:
+    border-color var(--duration-fast) ease,
+    box-shadow var(--duration-base) ease;
+}
+
+.card:hover {
+  border-color: var(--color-grey-active);
+  box-shadow: 0 8px 24px rgba(13, 20, 35, 0.06);
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  gap: 15px;
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 2px;
+}
+
+.title {
+  font-size: var(--fs-h5);
+}
+
+.title a:hover {
+  color: var(--color-primary);
+}
+
+.description {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: var(--fs-caption);
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: auto;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-dark-grey);
+}
+
+.meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.meta svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-grey-active);
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 270px;
+  padding: 20px 10px 10px;
+  text-align: center;
+  background: var(--color-background);
+  border-radius: var(--radius-s);
+}
+
+.statusIcon {
+  display: inline-flex;
+  margin: 10px 0 15px;
+}
+
+.statusIcon svg {
+  width: 40px;
+  height: 40px;
+  stroke-width: 1.4;
+}
+
+.statusTitle {
+  font-size: var(--fs-h6);
+  font-weight: 500;
+  line-height: var(--lh-title);
+}
+
+.statusText {
+  margin-top: 10px;
+  font-size: var(--fs-caption);
+  color: var(--color-dark-grey);
+}
+
+.action {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+.primary {
+  color: var(--color-primary);
+}
+
+.danger {
+  color: var(--color-secondary);
+}
+
+@media (max-width: 1100px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .status {
+    width: 100%;
+  }
+}

@@ -1,0 +1,21 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.agreement {
+  font-weight: 600;
+  line-height: var(--lh-title);
+}
+
+.agreement a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}

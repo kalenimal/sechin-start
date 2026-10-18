@@ -1,0 +1,79 @@
+.title {
+  font-size: var(--fs-h6);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.description {
+  margin-top: 10px;
+  overflow: hidden;
+  font-size: var(--fs-small);
+  color: var(--color-dark-grey);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tag {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.status {
+  margin: auto 0 0;
+  overflow: hidden;
+  background: var(--color-background);
+  border-radius: var(--radius-m);
+}
+
+.row {
+  display: flex;
+  gap: 7px;
+  padding: 10px;
+}
+
+.row + .row {
+  border-top: 1px solid var(--color-white);
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.label {
+  padding-top: 3px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  line-height: var(--lh-text);
+  color: var(--color-dark-grey);
+}
+
+.value {
+  margin: 3px 0 0;
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  line-height: var(--lh-text);
+}
+
+.secondary {
+  color: var(--color-secondary);
+  stroke-dasharray: 3 3;
+}
+
+.danger {
+  color: var(--color-red);
+}
+
+.success {
+  color: #4fd92d;
+}

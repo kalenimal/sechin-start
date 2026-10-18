@@ -1,0 +1,13 @@
+.donut {
+  flex-shrink: 0;
+}
+
+.progress {
+  animation: donut-fill 1s var(--ease-out) 150ms both;
+}
+
+@keyframes donut-fill {
+  from {
+    stroke-dasharray: 0 var(--length);
+  }
+}

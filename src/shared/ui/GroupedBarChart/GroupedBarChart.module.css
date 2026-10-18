@@ -1,0 +1,176 @@
+.figure {
+  margin: 0;
+}
+
+.plot {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 40px;
+}
+
+.yAxis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  margin: -6px 0;
+  font-size: var(--fs-small);
+  text-align: right;
+  color: var(--color-dark-grey);
+}
+
+.area {
+  position: relative;
+  flex: 1;
+}
+
+.gridLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px dashed var(--color-grey);
+}
+
+.groups {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+}
+
+.group {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  max-width: 120px;
+  outline: none;
+}
+
+.group:hover .bars,
+.group:focus-visible .bars {
+  background: rgba(242, 244, 245, 0.7);
+}
+
+.bars {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-s);
+}
+
+.barSlot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 40%;
+  max-width: 40px;
+}
+
+.bar {
+  width: 100%;
+  min-height: 2px;
+  border-radius: 4px 4px 0 0;
+  transform-origin: bottom;
+  animation: grow-y 700ms var(--ease-out) both;
+}
+
+.group:nth-child(2) .bar {
+  animation-delay: 50ms;
+}
+.group:nth-child(3) .bar {
+  animation-delay: 100ms;
+}
+.group:nth-child(4) .bar {
+  animation-delay: 150ms;
+}
+.group:nth-child(5) .bar {
+  animation-delay: 200ms;
+}
+.group:nth-child(6) .bar {
+  animation-delay: 250ms;
+}
+.group:nth-child(n + 7) .bar {
+  animation-delay: 300ms;
+}
+
+.value {
+  animation: fade-in 400ms ease 500ms both;
+}
+
+.value {
+  margin-bottom: 4px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.xLabel {
+  position: absolute;
+  top: calc(100% + 12px);
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  z-index: 5;
+  min-width: 190px;
+  padding: 10px 12px;
+  background: var(--color-white);
+  border: 1px solid var(--color-grey);
+  border-radius: var(--radius-m);
+  box-shadow: 0 10px 30px rgba(13, 20, 35, 0.1);
+  transform: translateX(-50%);
+  pointer-events: none;
+  animation: fade-in var(--duration-fast) ease;
+}
+
+.tooltipTitle {
+  margin-bottom: 6px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.tooltipRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-small);
+  color: var(--color-dark-grey);
+}
+
+.tooltipRow strong {
+  margin-left: auto;
+  color: var(--color-black);
+}
+
+.swatch,
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legend {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  font-size: var(--fs-small);
+  color: var(--color-dark-grey);
+}
+
+.legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

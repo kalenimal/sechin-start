@@ -1,0 +1,173 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 50px var(--gutter) 80px;
+  background: var(--color-background);
+}
+
+.logo {
+  margin-bottom: 50px;
+}
+
+.cardWrap {
+  position: relative;
+  width: 100%;
+  max-width: 598px;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  right: calc(100% + 10px);
+  height: 64px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0 50px;
+  background: var(--color-white);
+  border-radius: var(--radius-m);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 50px 0;
+}
+
+.contentCentered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 50px 0;
+  text-align: center;
+}
+
+.stepper {
+  padding: 0 20px 20px;
+  border-bottom: 1px solid var(--color-background);
+}
+
+/* Stepper */
+.steps {
+  position: relative;
+  display: flex;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* connector to the next step */
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: calc(50% + 34px);
+  right: calc(-50% + 34px);
+  height: 1px;
+  background: var(--color-grey);
+}
+
+.step.done:not(:last-child)::after {
+  background: var(--color-primary);
+}
+
+.dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  color: var(--color-white);
+  border: 1.5px solid var(--color-grey);
+  border-radius: 50%;
+}
+
+.dot svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 3;
+}
+
+.current .dot {
+  border-color: var(--color-primary);
+}
+
+.done .dot {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.stepLabel {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  line-height: var(--lh-text);
+  text-align: center;
+  color: var(--color-dark-grey);
+}
+
+.done .stepLabel,
+.current .stepLabel {
+  color: var(--color-black);
+}
+
+@media (max-width: 1100px) {
+  .back {
+    position: static;
+    height: 48px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .logo img {
+    width: 72px;
+    height: auto;
+  }
+
+  .logo {
+    margin-bottom: 30px;
+  }
+
+  .content,
+  .contentCentered {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .card {
+    padding-bottom: 30px;
+  }
+}
+
+/* Laptops with short viewports (1366×768): keep the form above the fold. */
+@media (max-height: 860px) {
+  .page {
+    padding-top: 24px;
+  }
+
+  .logo {
+    margin-bottom: 24px;
+  }
+
+  .logo img {
+    width: 64px;
+    height: auto;
+  }
+
+  .content {
+    gap: 28px;
+  }
+}

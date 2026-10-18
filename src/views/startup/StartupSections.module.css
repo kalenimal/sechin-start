@@ -1,0 +1,151 @@
+/* About */
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 40px;
+  font-size: var(--fs-paragraph);
+}
+
+.aboutTitle {
+  font-size: var(--fs-h2);
+}
+
+.lead {
+  font-size: var(--fs-h6);
+  font-weight: 500;
+  line-height: var(--lh-title);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.steps ul {
+  padding-left: 25px;
+  list-style: disc;
+}
+
+.aboutImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 690 / 400;
+  object-fit: cover;
+  border-radius: var(--radius-l);
+}
+
+/* Team */
+.team {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.member {
+  display: flex;
+  gap: 20px;
+  padding: 5px 15px 5px 5px;
+  background: var(--color-white);
+  border-radius: var(--radius-s);
+}
+
+.memberPhoto {
+  flex-shrink: 0;
+  width: 136px;
+  height: 136px;
+  object-fit: cover;
+  border: 1px solid var(--color-background);
+  border-radius: var(--radius-s);
+}
+
+.member > div {
+  padding: 15px 0;
+}
+
+.memberName {
+  font-size: var(--fs-h6);
+}
+
+.memberRole {
+  margin-top: 5px;
+  font-size: var(--fs-caption);
+  color: var(--color-dark-grey);
+}
+
+.memberBio {
+  margin-top: 15px;
+  font-size: var(--fs-caption);
+}
+
+/* Reviews */
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.review {
+  padding: 15px 15px 20px;
+  text-align: center;
+  background: var(--color-white);
+  border-radius: var(--radius-s);
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.star {
+  width: 30px;
+  height: 30px;
+  color: var(--color-background);
+  fill: currentColor;
+}
+
+.starFilled {
+  color: var(--color-primary);
+}
+
+.reviewText {
+  margin: 15px 0 20px;
+  font-size: var(--fs-caption);
+}
+
+.reviewAuthor {
+  font-size: var(--fs-caption);
+  font-weight: 600;
+}
+
+.reviewPosition {
+  margin-top: 5px;
+  font-size: var(--fs-small);
+  color: var(--color-dark-grey);
+}
+
+/* Documents */
+.documents {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 640px) {
+  .member {
+    flex-direction: column;
+  }
+
+  .memberPhoto {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .reviews,
+  .documents {
+    grid-template-columns: 100%;
+  }
+}

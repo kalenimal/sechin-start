@@ -1,0 +1,9 @@
+.active {
+  color: var(--color-primary);
+  background: var(--color-primary-10);
+}
+
+.active svg {
+  fill: currentColor;
+  animation: pop 360ms var(--ease-out);
+}
