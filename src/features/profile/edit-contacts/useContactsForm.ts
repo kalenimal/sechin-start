@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useSession } from '@/entities/session';
 import { delay } from '@/shared/api';
-import { toast } from '@/shared/ui';
+import { toast } from '@/shared/ui/Toast';
 import { emailSchema, phoneSchema, requiredString } from '@/shared/lib/validation';
 
 const schema = z.object({ fullName: requiredString('Укажите имя и фамилию'), email: emailSchema, phone: phoneSchema });

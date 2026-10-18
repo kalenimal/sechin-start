@@ -1,6 +1,6 @@
 import type { ProjectDocument } from '@/entities/project';
 import { ReviewBlock } from '@/features/expertise-review';
-import { FileCard } from '@/shared/ui';
+import { FileCard } from '@/shared/ui/FileCard';
 import { Section } from '../parts';
 import styles from '../ProjectDetails.module.css';
 

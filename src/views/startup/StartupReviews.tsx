@@ -1,7 +1,7 @@
 import { Star } from 'lucide-react';
 import type { Startup } from '@/entities/startup';
 import { cn } from '@/shared/lib/cn';
-import { EmptyState } from '@/shared/ui';
+import { EmptyState } from '@/shared/ui/EmptyState';
 import styles from './StartupSections.module.css';
 
 export function StartupReviews({ startup }: { startup: Startup }) {

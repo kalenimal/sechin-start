@@ -15,7 +15,13 @@ import {
 } from '@/entities/project';
 import { useSession } from '@/entities/session';
 import { emailSchema, phoneSchema, requiredString } from '@/shared/lib/validation';
-import { Button, FileUpload, FormError, RadioGroup, Select, Textarea, TextField, type UploadedFile } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { FileUpload, type UploadedFile } from '@/shared/ui/FileUpload';
+import { FormError } from '@/shared/ui/FormError';
+import { RadioGroup } from '@/shared/ui/RadioGroup';
+import { Select } from '@/shared/ui/Select';
+import { TextField } from '@/shared/ui/TextField';
+import { Textarea } from '@/shared/ui/Textarea';
 import { useCompleteRegistration } from '../model/useCompleteRegistration';
 import { ContactFields } from './ContactFields';
 import { FormSection } from './FormSection';

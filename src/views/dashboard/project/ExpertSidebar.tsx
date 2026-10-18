@@ -3,7 +3,7 @@ import type { ExpertiseRequest } from '@/entities/expertise';
 import { CompanyCard, type Project } from '@/entities/project';
 import { ReviewActions } from '@/features/expertise-review';
 import { CompanyDetailsButton } from '@/features/project/company-details';
-import { InfoChip } from '@/shared/ui';
+import { InfoChip } from '@/shared/ui/InfoChip';
 
 type Props = { project: Project; expertise: ExpertiseRequest | null; reviewable: boolean };
 

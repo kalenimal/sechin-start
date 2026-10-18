@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { routes } from '@/shared/config';
 import { formatMillions } from '@/shared/lib/format';
-import { Tag, TagList } from '@/shared/ui';
+import { Tag, TagList } from '@/shared/ui/Tag';
 import { directionLabel } from '../model/dictionaries';
 import type { Project } from '../model/types';
 import { CompanyCard } from './CompanyCard';

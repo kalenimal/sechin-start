@@ -16,6 +16,8 @@
   transform: scale(1.09);
 }
 
+/* Brand glows: the design uses SVG ellipses with a 207px Gaussian blur, which is expensive to paint.
+   Soft radial gradients give the same look at a fraction of the cost. */
 .glowTop,
 .glowBottom {
   position: absolute;
@@ -23,33 +25,33 @@
 }
 
 .glowTop {
-  left: 4%;
-  top: -306px;
-  width: 1148px;
-  height: 614px;
-}
-
-.glowTop span {
-  position: absolute;
-  inset: -67.38% -36.06%;
-  background: url('/images/onboarding-glow-1.svg') center / 100% 100% no-repeat;
+  left: -10%;
+  top: -55%;
+  width: 140%;
+  height: 100%;
+  background: radial-gradient(closest-side, rgba(56, 113, 132, 0.85), rgba(56, 113, 132, 0.35) 55%, transparent);
 }
 
 .glowBottom {
-  left: -378px;
-  bottom: -137px;
-  width: 1397px;
-  height: 523px;
+  left: -55%;
+  bottom: -40%;
+  width: 160%;
+  height: 80%;
+  background: radial-gradient(closest-side, rgba(56, 113, 132, 0.95), rgba(56, 113, 132, 0.4) 55%, transparent);
 }
 
-.glowBottom span {
+/* Readability scrim under the headline, matching the teal fade in the design. */
+.panel::after {
+  content: '';
   position: absolute;
-  inset: -79.19% -29.64%;
-  background: url('/images/onboarding-glow-2.svg') center / 100% 100% no-repeat;
+  inset: 45% 0 0;
+  background: linear-gradient(to bottom, transparent, rgba(56, 113, 132, 0.55) 45%, rgba(40, 88, 104, 0.8));
+  pointer-events: none;
 }
 
 .text {
   position: absolute;
+  z-index: 1;
   left: 50px;
   right: 50px;
   bottom: 50px;

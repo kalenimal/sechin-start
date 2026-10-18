@@ -1,5 +1,5 @@
 import type { ProjectFilters, ProjectStage } from '@/entities/project';
-import type { Range } from '@/shared/ui';
+import type { Range } from '@/shared/ui/RangeField';
 
 export type FeedFiltersState = {
   direction: string;

@@ -2,7 +2,8 @@
 
 import { Heart } from 'lucide-react';
 import { useToggleFavourite } from '@/entities/project';
-import { Button, toast, type ButtonSize } from '@/shared/ui';
+import { Button, type ButtonSize } from '@/shared/ui/Button';
+import { toast } from '@/shared/ui/Toast';
 import styles from './FavouriteButton.module.css';
 
 export function FavouriteButton({

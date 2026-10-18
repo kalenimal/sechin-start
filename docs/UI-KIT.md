@@ -1,7 +1,7 @@
 # UI-kit (`src/shared/ui`)
 
 Компоненты повторяют страницу **UI KIT** из Figma. Стили сделаны на CSS Modules и токенах из `src/app/globals.css`.
-Импорт идёт из публичного API: `import { Button, TextField } from '@/shared/ui'`.
+Каждый компонент импортируется из своей папки: `import { Button } from '@/shared/ui/Button'`. Общего barrel-файла нет намеренно: так серверные страницы не тянут в клиентский бандл все компоненты сразу.
 
 ## Токены
 

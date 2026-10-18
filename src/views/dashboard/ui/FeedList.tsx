@@ -6,7 +6,8 @@ import { CompanyDetailsButton } from '@/features/project/company-details';
 import { RequestAccessButton } from '@/features/project/request-access';
 import { FavouriteButton } from '@/features/project/toggle-favourite';
 import { routes } from '@/shared/config';
-import { Button, SkeletonList } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { SkeletonList } from '@/shared/ui/Skeleton';
 import styles from './FeedList.module.css';
 
 type FeedProject = Project & { isFavourite?: boolean; accessRequested?: boolean };

@@ -4,7 +4,13 @@ import { useState } from 'react';
 import { useCreateRequest } from '@/entities/corporate-request';
 import { dealTypes, directionLabel, projectDirections, projectStages, type ProjectStage } from '@/entities/project';
 import { useSession } from '@/entities/session';
-import { Button, ChoiceChips, FormError, Modal, RangeField, Select, toast, type Range } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { ChoiceChips } from '@/shared/ui/ChoiceChips';
+import { FormError } from '@/shared/ui/FormError';
+import { Modal } from '@/shared/ui/Modal';
+import { RangeField, type Range } from '@/shared/ui/RangeField';
+import { Select } from '@/shared/ui/Select';
+import { toast } from '@/shared/ui/Toast';
 import styles from './CreateRequestModal.module.css';
 
 export function CreateRequestModal({ open, onClose }: { open: boolean; onClose: () => void }) {

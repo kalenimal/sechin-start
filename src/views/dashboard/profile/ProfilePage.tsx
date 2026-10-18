@@ -8,7 +8,10 @@ import { ChangePasswordModal } from '@/features/profile/change-password';
 import { useContactsForm } from '@/features/profile/edit-contacts';
 import { LogoutButton } from '@/features/profile/logout';
 import { cn } from '@/shared/lib/cn';
-import { Button, TextField, TextLink, PhoneField } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { PhoneField } from '@/shared/ui/PhoneField';
+import { TextField } from '@/shared/ui/TextField';
+import { TextLink } from '@/shared/ui/TextLink';
 import { DashboardPage } from '@/widgets/dashboard-page';
 import styles from './ProfilePage.module.css';
 

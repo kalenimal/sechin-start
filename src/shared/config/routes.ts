@@ -1,6 +1,8 @@
 export const routes = {
   home: '/',
   startups: '/startups',
+  terms: '/terms',
+  offer: '/offer',
   startup: (slug: string) => `/startups/${slug}`,
   startupTab: (slug: string, tab: string) => `/startups/${slug}/${tab}`,
 

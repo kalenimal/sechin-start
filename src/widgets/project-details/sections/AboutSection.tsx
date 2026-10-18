@@ -2,7 +2,7 @@ import { CircleCheck, UsersRound } from 'lucide-react';
 import type { Project } from '@/entities/project';
 import { ReviewBlock } from '@/features/expertise-review';
 import { cn } from '@/shared/lib/cn';
-import { InfoChip } from '@/shared/ui';
+import { InfoChip } from '@/shared/ui/InfoChip';
 import { Section, TextBlock } from '../parts';
 import styles from '../ProjectDetails.module.css';
 

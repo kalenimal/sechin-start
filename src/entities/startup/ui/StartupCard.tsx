@@ -2,14 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { routes } from '@/shared/config';
 import { fundingProgress, investorsLabel } from '@/shared/lib/format';
-import { Tag, TagList } from '@/shared/ui';
+import { Tag, TagList } from '@/shared/ui/Tag';
 import type { Startup } from '../model/types';
 import { FundingProgress } from './FundingProgress';
 import styles from './StartupCard.module.css';
 
 type StartupCardProps = {
   startup: Startup;
-  /** Above-the-fold cards get eager image loading for LCP. */
+  /** Only the LCP card (first in the grid) should be prioritised — several priority images compete for bandwidth. */
   priority?: boolean;
   headingLevel?: 'h2' | 'h3';
 };
@@ -23,7 +23,7 @@ export function StartupCard({ startup, priority = false, headingLevel: Heading =
           src={startup.cover}
           alt={`Обложка проекта ${startup.name}`}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 364px"
+          sizes="(max-width: 640px) calc(100vw - 52px), (max-width: 1024px) 45vw, 364px"
           className={styles.cover}
           priority={priority}
         />

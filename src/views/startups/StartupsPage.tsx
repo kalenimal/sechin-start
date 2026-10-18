@@ -3,7 +3,9 @@ import { getStartups, StartupCard, startupListSchema, startupsTags } from '@/ent
 import { routes } from '@/shared/config';
 import { cn } from '@/shared/lib/cn';
 import { breadcrumbSchema, JsonLd } from '@/shared/lib/seo';
-import { Button, Container, EmptyState } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { Container } from '@/shared/ui/Container';
+import { EmptyState } from '@/shared/ui/EmptyState';
 import homeStyles from '../home/HomePage.module.css';
 import styles from './StartupsPage.module.css';
 
@@ -58,7 +60,7 @@ export async function StartupsPage({ q, tag }: StartupsPageProps) {
         <ul className={`${homeStyles.grid} stagger`}>
           {startups.map((startup, index) => (
             <li key={startup.slug}>
-              <StartupCard startup={startup} priority={index < 3} headingLevel="h2" />
+              <StartupCard startup={startup} priority={index === 0} headingLevel="h2" />
             </li>
           ))}
         </ul>

@@ -4,7 +4,8 @@ import { CalendarDays, CircleAlert, CircleCheck, CircleDashed, Mail } from 'luci
 import { routes } from '@/shared/config';
 import { cn } from '@/shared/lib/cn';
 import { formatDate } from '@/shared/lib/format';
-import { ChamferCard, Tag } from '@/shared/ui';
+import { ChamferCard } from '@/shared/ui/ChamferCard';
+import { Tag } from '@/shared/ui/Tag';
 import { directionLabel } from '../model/dictionaries';
 import { projectStatusLabels, type Project, type ProjectStatus } from '../model/types';
 import styles from './ProjectStatusCard.module.css';

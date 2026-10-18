@@ -4,7 +4,7 @@ import { BriefcaseBusiness, CalendarDays, CircleCheck, Lightbulb, PencilLine, Re
 import { directionLabel, ProjectLogo } from '@/entities/project';
 import { routes } from '@/shared/config';
 import { formatDate } from '@/shared/lib/format';
-import { Tag, TagList } from '@/shared/ui';
+import { Tag, TagList } from '@/shared/ui/Tag';
 import type { ExpertiseItem } from '../api/expertiseApi';
 import { expertiseStatusLabels, type ExpertiseStatus } from '../model/types';
 import styles from './ExpertiseCard.module.css';

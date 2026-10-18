@@ -1,4 +1,4 @@
-import { OnboardingPage } from '@/views/auth';
+import { OnboardingPage } from '@/views/onboarding';
 
 export const metadata = { title: 'Регистрация и вход' };
 

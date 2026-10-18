@@ -3,7 +3,8 @@
 import { ExpertiseCard, useExpertiseRequests } from '@/entities/expertise';
 import { useSession } from '@/entities/session';
 import { routes } from '@/shared/config';
-import { Button, EmptyState } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { EmptyState } from '@/shared/ui/EmptyState';
 import { DashboardPage } from '@/widgets/dashboard-page';
 import listStyles from '../ui/FeedList.module.css';
 

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { FileText, Mail } from 'lucide-react';
 import { useInvestorStats, type Period } from '@/entities/analytics';
 import { formatPeriodLong, PeriodPicker, presetPeriod, type PresetKey } from '@/features/analytics-period';
-import { GroupedBarChart } from '@/shared/ui';
+import { GroupedBarChart } from '@/shared/ui/GroupedBarChart';
 import { DashboardPage } from '@/widgets/dashboard-page';
 import styles from './AnalyticsPage.module.css';
 

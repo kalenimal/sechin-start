@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { routes, siteConfig } from '@/shared/config';
-import { Container } from '@/shared/ui';
+import { Container } from '@/shared/ui/Container';
 import styles from './PublicFooter.module.css';
 
 export function PublicFooter() {

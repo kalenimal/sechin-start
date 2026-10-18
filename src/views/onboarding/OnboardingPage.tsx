@@ -2,7 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BriefcaseBusiness, ChevronRight, Rocket } from 'lucide-react';
 import { routes } from '@/shared/config';
-import { Logo, TextLink } from '@/shared/ui';
+import { Logo } from '@/shared/ui/Logo';
+import { TextLink } from '@/shared/ui/TextLink';
 import { OnboardingHero } from '@/widgets/onboarding-hero';
 import styles from './OnboardingPage.module.css';
 

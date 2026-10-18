@@ -1,5 +1,6 @@
 import { routes } from '@/shared/config';
-import { Button, EmptyState } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { EmptyState } from '@/shared/ui/EmptyState';
 import { DashboardPage } from '@/widgets/dashboard-page';
 
 /** Not designed yet — keeps navigation consistent until the chat screens are ready. */

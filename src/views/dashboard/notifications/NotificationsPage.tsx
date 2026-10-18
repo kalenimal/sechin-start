@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { NotificationItem, useMarkRead, useNotifications } from '@/entities/notification';
-import { EmptyState, Tabs, type TabItem } from '@/shared/ui';
+import { EmptyState } from '@/shared/ui/EmptyState';
+import { Tabs, type TabItem } from '@/shared/ui/Tabs';
 import { DashboardPage } from '@/widgets/dashboard-page';
 import styles from './NotificationsPage.module.css';
 

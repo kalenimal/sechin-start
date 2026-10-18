@@ -1,0 +1,1 @@
+export { SignUpSuccessPage } from './SignUpSuccessPage';

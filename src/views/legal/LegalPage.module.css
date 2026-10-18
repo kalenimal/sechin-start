@@ -1,0 +1,55 @@
+.page {
+  max-width: calc(800px + var(--gutter) * 2);
+  padding-top: 50px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: var(--fs-h2);
+}
+
+.updated {
+  font-size: var(--fs-caption);
+  color: var(--color-dark-grey);
+}
+
+.intro {
+  font-size: var(--fs-paragraph);
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  counter-reset: section;
+}
+
+.section {
+  padding: 24px;
+  background: var(--color-white);
+  border-radius: var(--radius-m);
+  counter-increment: section;
+}
+
+.sectionTitle {
+  margin-bottom: 12px;
+  font-size: var(--fs-h6);
+}
+
+.sectionTitle::before {
+  content: counter(section) '. ';
+  color: var(--color-primary);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: var(--fs-caption);
+}

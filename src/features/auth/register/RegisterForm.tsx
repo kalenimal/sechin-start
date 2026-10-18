@@ -9,7 +9,11 @@ import { authApi, type Role, useSession } from '@/entities/session';
 import { routes } from '@/shared/config';
 import { useAsyncAction } from '@/shared/lib/hooks/useAsyncAction';
 import { emailSchema, passwordSchema } from '@/shared/lib/validation';
-import { Button, Checkbox, FormError, TextField, TextLink } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { Checkbox } from '@/shared/ui/Checkbox';
+import { FormError } from '@/shared/ui/FormError';
+import { TextField } from '@/shared/ui/TextField';
+import { TextLink } from '@/shared/ui/TextLink';
 import styles from '../form.module.css';
 
 const schema = z.object({
@@ -66,8 +70,11 @@ export function RegisterForm({ role }: { role: Role }) {
               onChange={(event) => field.onChange(event.target.checked)}
               label={
                 <span className={styles.agreement}>
-                  Подтверждаю, что ознакомился(ась) с <Link href="/terms">Пользовательским соглашением</Link> и принимаю
-                  его условия в полном объёме
+                  Подтверждаю, что ознакомился(ась) с{' '}
+                  <Link href={routes.terms} target="_blank">
+                    Пользовательским соглашением
+                  </Link>{' '}
+                  и принимаю его условия в полном объёме
                 </span>
               }
             />

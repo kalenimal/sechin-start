@@ -309,8 +309,8 @@
 
 .criterion strong {
   margin-left: 6px;
-  font-weight: 500;
-  color: var(--color-dark-grey);
+  font-weight: 600;
+  color: var(--color-black);
 }
 
 .criterionLow {

@@ -1,6 +1,6 @@
 import { ClearPendingRegistration } from '@/features/questionnaire';
 import { routes } from '@/shared/config';
-import { Button } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
 import { AuthShell } from '@/widgets/auth-shell';
 import { SuccessIllustration } from './SuccessIllustration';
 import styles from './SignUpSuccessPage.module.css';

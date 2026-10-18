@@ -3,8 +3,12 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { Check } from 'lucide-react';
+import { routes } from '@/shared/config';
 import { directionLabel, ProjectLogo, useRequestAccess, type Project } from '@/entities/project';
-import { Button, Checkbox, FormError, Tag, TagList, type ButtonSize } from '@/shared/ui';
+import { Button, type ButtonSize } from '@/shared/ui/Button';
+import { Checkbox } from '@/shared/ui/Checkbox';
+import { FormError } from '@/shared/ui/FormError';
+import { Tag, TagList } from '@/shared/ui/Tag';
 import { Modal } from '@/shared/ui/Modal';
 import styles from './RequestAccessButton.module.css';
 
@@ -81,7 +85,10 @@ export function RequestAccessButton({ project, size = 'm', fullWidth }: Props) {
               onChange={(event) => setAgree(event.target.checked)}
               label={
                 <span className={styles.agreement}>
-                  Я принимаю условия <Link href="/offer">соглашения о сотрудничестве (оферты)</Link>{' '}
+                  Я принимаю условия{' '}
+                  <Link href={routes.offer} target="_blank">
+                    соглашения о сотрудничестве (оферты)
+                  </Link>{' '}
                   <span className={styles.required}>*</span>
                 </span>
               }

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { UsersRound } from 'lucide-react';
 import type { Startup } from '@/entities/startup';
 import { formatRub, investorsLabel } from '@/shared/lib/format';
-import { Tag, TagList } from '@/shared/ui';
+import { Tag, TagList } from '@/shared/ui/Tag';
 import styles from './StartupHero.module.css';
 
 export function StartupHero({ startup }: { startup: Startup }) {

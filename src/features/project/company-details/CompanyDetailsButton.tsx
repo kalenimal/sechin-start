@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import type { Project } from '@/entities/project';
-import { Button, Modal } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { Modal } from '@/shared/ui/Modal';
 import styles from './CompanyDetailsButton.module.css';
 
 export function CompanyDetailsButton({

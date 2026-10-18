@@ -1,4 +1,4 @@
-import { NewPasswordPage } from '@/views/auth';
+import { NewPasswordPage } from '@/views/reset-password';
 
 export const metadata = { title: 'Новый пароль' };
 

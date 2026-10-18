@@ -8,7 +8,9 @@ import { authApi, useSession } from '@/entities/session';
 import { routes } from '@/shared/config';
 import { useAsyncAction } from '@/shared/lib/hooks/useAsyncAction';
 import { passwordSchema } from '@/shared/lib/validation';
-import { Button, FormError, TextField } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { FormError } from '@/shared/ui/FormError';
+import { TextField } from '@/shared/ui/TextField';
 import styles from '../form.module.css';
 
 const schema = z

@@ -8,7 +8,11 @@ import { authApi } from '@/entities/session';
 import { routes } from '@/shared/config';
 import { useAsyncAction } from '@/shared/lib/hooks/useAsyncAction';
 import { passwordSchema, requiredString } from '@/shared/lib/validation';
-import { Button, FormError, Modal, TextField, TextLink } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { FormError } from '@/shared/ui/FormError';
+import { Modal } from '@/shared/ui/Modal';
+import { TextField } from '@/shared/ui/TextField';
+import { TextLink } from '@/shared/ui/TextLink';
 import styles from '../profile.module.css';
 
 const schema = z

@@ -3,7 +3,7 @@ import type { Startup } from '@/entities/startup';
 import { startupSchema } from '@/entities/startup';
 import { routes } from '@/shared/config';
 import { breadcrumbSchema, JsonLd } from '@/shared/lib/seo';
-import { Container } from '@/shared/ui';
+import { Container } from '@/shared/ui/Container';
 import { StartupHero } from '@/widgets/startup-hero';
 import { StartupTabs } from '@/widgets/startup-tabs';
 import styles from './StartupLayout.module.css';

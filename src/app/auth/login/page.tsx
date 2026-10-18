@@ -1,4 +1,4 @@
-import { LoginPage } from '@/views/auth';
+import { LoginPage } from '@/views/login';
 
 export const metadata = { title: 'Вход на платформу' };
 

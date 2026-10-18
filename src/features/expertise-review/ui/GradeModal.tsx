@@ -2,7 +2,9 @@
 
 import { useState } from 'react';
 import { cn } from '@/shared/lib/cn';
-import { Button, FormError, Modal } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { FormError } from '@/shared/ui/FormError';
+import { Modal } from '@/shared/ui/Modal';
 import styles from './GradeModal.module.css';
 
 export const gradeCriteria = [

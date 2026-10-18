@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Logo } from '@/shared/ui';
+import { Logo } from '@/shared/ui/Logo';
 import { BackButton } from './BackButton';
 import styles from './AuthShell.module.css';
 

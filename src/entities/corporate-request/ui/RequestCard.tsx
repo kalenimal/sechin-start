@@ -3,7 +3,8 @@ import { CircleCheck, CircleDashed, FileX } from 'lucide-react';
 import { directionLabel } from '@/entities/project';
 import { routes } from '@/shared/config';
 import { pluralize } from '@/shared/lib/format';
-import { ChamferCard, Tag } from '@/shared/ui';
+import { ChamferCard } from '@/shared/ui/ChamferCard';
+import { Tag } from '@/shared/ui/Tag';
 import { requestStatusLabels, type CorporateRequest } from '../model/types';
 import styles from './RequestCard.module.css';
 

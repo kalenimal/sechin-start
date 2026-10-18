@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from 'react';
 import { Search, SlidersHorizontal } from 'lucide-react';
-import { Button } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
 import { activeFiltersCount, type FeedFiltersState } from './model';
 import { FeedFiltersModal } from './FeedFiltersModal';
 import styles from './FeedSearchBar.module.css';

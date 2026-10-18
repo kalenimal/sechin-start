@@ -1,6 +1,6 @@
 import { getStartups, StartupCard, startupListSchema } from '@/entities/startup';
 import { JsonLd } from '@/shared/lib/seo';
-import { Container } from '@/shared/ui';
+import { Container } from '@/shared/ui/Container';
 import styles from './HomePage.module.css';
 
 export async function HomePage() {
@@ -16,7 +16,7 @@ export async function HomePage() {
       <ul className={`${styles.grid} stagger`}>
         {startups.map((startup, index) => (
           <li key={startup.slug}>
-            <StartupCard startup={startup} priority={index < 3} headingLevel="h2" />
+            <StartupCard startup={startup} priority={index === 0} headingLevel="h2" />
           </li>
         ))}
       </ul>

@@ -1,4 +1,4 @@
-import type { SelectOption } from '@/shared/ui';
+import type { SelectOption } from '@/shared/ui/Select';
 
 export const projectStages = [
   { value: 'idea', label: 'Идея' },

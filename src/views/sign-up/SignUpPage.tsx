@@ -1,19 +1,34 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useSyncExternalStore } from 'react';
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/navigation';
 import { RegisterForm } from '@/features/auth/register';
-import { VerifyEmailForm } from '@/features/auth/verify-email';
-import { CorporateQuestionnaire, InvestorQuestionnaire, StartupQuestionnaire } from '@/features/questionnaire';
 import { useSession, type Role } from '@/entities/session';
 import { routes } from '@/shared/config';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { AuthShell, AuthText, Stepper } from '@/widgets/auth-shell';
+
+// Steps 2–3 are loaded on demand: the questionnaires (file upload, many selects) are the heaviest part of auth.
+const stepFallback = () => <Skeleton height={320} />;
+const VerifyEmailForm = dynamic(() => import('@/features/auth/verify-email').then((m) => m.VerifyEmailForm), {
+  loading: stepFallback,
+});
+const StartupQuestionnaire = dynamic(() => import('@/features/questionnaire').then((m) => m.StartupQuestionnaire), {
+  loading: stepFallback,
+});
+const InvestorQuestionnaire = dynamic(() => import('@/features/questionnaire').then((m) => m.InvestorQuestionnaire), {
+  loading: stepFallback,
+});
+const CorporateQuestionnaire = dynamic(() => import('@/features/questionnaire').then((m) => m.CorporateQuestionnaire), {
+  loading: stepFallback,
+});
 
 export type SignUpRole = Exclude<Role, 'expert'>;
 
 const STEPS = ['Регистрация аккаунта', 'Подтверждение', 'Заполнение анкеты'];
 
-const copy: Record<SignUpRole, { register: string; questionnaire: string; Form: () => React.JSX.Element }> = {
+const copy: Record<SignUpRole, { register: string; questionnaire: string; Form: React.ComponentType }> = {
   startup: { register: 'Регистрация аккаунта стартапа', questionnaire: 'Анкета стартапа', Form: StartupQuestionnaire },
   investor: {
     register: 'Регистрация аккаунта инвестора',
@@ -27,9 +42,18 @@ const copy: Record<SignUpRole, { register: string; questionnaire: string; Form: 
   },
 };
 
-export function SignUpPage({ role }: { role: SignUpRole }) {
+const subscribeNoop = () => () => {};
+/** false during SSR / hydration, true afterwards — pending registration lives in sessionStorage (client only). */
+const useHydrated = () =>
+  useSyncExternalStore(
+    subscribeNoop,
+    () => true,
+    () => false,
+  );
+
+export function SignUpPage({ role, requestedStep }: { role: SignUpRole; requestedStep: number }) {
   const router = useRouter();
-  const requestedStep = Number(useSearchParams().get('step') ?? 1);
+  const hydrated = useHydrated();
   const pending = useSession((state) => state.pending);
   const setPending = useSession((state) => state.setPending);
 
@@ -38,8 +62,18 @@ export function SignUpPage({ role }: { role: SignUpRole }) {
   const step = Math.min(Math.max(requestedStep, 1), allowedStep);
 
   useEffect(() => {
-    if (step !== requestedStep) router.replace(step === 1 ? routes.signUp(role) : routes.signUpStep(role, step));
-  }, [step, requestedStep, role, router]);
+    if (hydrated && step !== requestedStep)
+      router.replace(step === 1 ? routes.signUp(role) : routes.signUpStep(role, step));
+  }, [hydrated, step, requestedStep, role, router]);
+
+  // Step 1 is fully server-rendered; later steps depend on sessionStorage, so they render after hydration.
+  if (!hydrated && requestedStep > 1) {
+    return (
+      <AuthShell stepper={<Stepper steps={STEPS} current={requestedStep - 1} />}>
+        <Skeleton height={320} />
+      </AuthShell>
+    );
+  }
 
   const { register, questionnaire, Form } = copy[role];
   const back = step === 1 ? routes.auth : routes.signUpStep(role, step - 1);

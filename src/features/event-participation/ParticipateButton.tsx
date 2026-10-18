@@ -8,7 +8,11 @@ import { Check } from 'lucide-react';
 import { useApplyToEvent } from '@/entities/event';
 import { useSession } from '@/entities/session';
 import { emailSchema, phoneSchema, requiredString } from '@/shared/lib/validation';
-import { Button, FormError, Modal, TextField, type ButtonSize, PhoneField } from '@/shared/ui';
+import { Button, type ButtonSize } from '@/shared/ui/Button';
+import { FormError } from '@/shared/ui/FormError';
+import { Modal } from '@/shared/ui/Modal';
+import { PhoneField } from '@/shared/ui/PhoneField';
+import { TextField } from '@/shared/ui/TextField';
 import styles from './ParticipateButton.module.css';
 
 const schema = z.object({

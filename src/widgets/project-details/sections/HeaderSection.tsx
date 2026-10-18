@@ -3,7 +3,7 @@ import { Globe, UserRound } from 'lucide-react';
 import { directionLabel, ProjectHighlights, projectPublicId, type Project } from '@/entities/project';
 import { ReviewBlock } from '@/features/expertise-review';
 import { formatDate, formatMillions } from '@/shared/lib/format';
-import { Tag, TagList } from '@/shared/ui';
+import { Tag, TagList } from '@/shared/ui/Tag';
 import { TextBlock } from '../parts';
 import styles from '../ProjectDetails.module.css';
 

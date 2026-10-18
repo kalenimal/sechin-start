@@ -3,7 +3,7 @@
 import { LogOut } from 'lucide-react';
 import { useSession } from '@/entities/session';
 import { routes } from '@/shared/config';
-import { TextLink } from '@/shared/ui';
+import { TextLink } from '@/shared/ui/TextLink';
 
 export function LogoutButton({ className }: { className?: string }) {
   const logout = useSession((state) => state.logout);

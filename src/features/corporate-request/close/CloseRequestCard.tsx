@@ -3,7 +3,9 @@
 import { useState } from 'react';
 import { FileCheck } from 'lucide-react';
 import { useCloseRequest } from '@/entities/corporate-request';
-import { Button, Modal, toast } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { Modal } from '@/shared/ui/Modal';
+import { toast } from '@/shared/ui/Toast';
 import styles from './CloseRequestCard.module.css';
 
 /** Sidebar card "Проект найден?" with a confirmation modal. */

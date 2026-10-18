@@ -1,7 +1,7 @@
 import { FileCheck } from 'lucide-react';
 import type { Project } from '@/entities/project';
 import { ReviewBlock } from '@/features/expertise-review';
-import { InfoChip } from '@/shared/ui';
+import { InfoChip } from '@/shared/ui/InfoChip';
 import { Section, yesNo } from '../parts';
 import styles from '../ProjectDetails.module.css';
 

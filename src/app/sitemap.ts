@@ -10,6 +10,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     { url: siteConfig.url, lastModified: now, changeFrequency: 'daily', priority: 1 },
     { url: `${siteConfig.url}/startups`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${siteConfig.url}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${siteConfig.url}/offer`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
     ...startups.flatMap((startup) =>
       TABS.map((tab) => ({
         url: `${siteConfig.url}/startups/${startup.slug}${tab}`,

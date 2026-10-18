@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Skeleton } from '@/shared/ui';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import styles from './CardsGrid.module.css';
 
 export function CardsGrid({ children, loading }: { children: ReactNode; loading?: boolean }) {

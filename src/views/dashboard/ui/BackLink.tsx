@@ -1,5 +1,5 @@
 import { ChevronLeft } from 'lucide-react';
-import { Button } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
 import styles from './BackLink.module.css';
 
 export function BackLink({ href }: { href: string }) {

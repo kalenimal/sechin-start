@@ -1,5 +1,5 @@
 import type { Startup } from '@/entities/startup';
-import { FileCard } from '@/shared/ui';
+import { FileCard } from '@/shared/ui/FileCard';
 import styles from './StartupSections.module.css';
 
 export function StartupDocuments({ startup }: { startup: Startup }) {

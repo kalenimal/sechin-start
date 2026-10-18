@@ -1,6 +1,6 @@
 import { CircleCheck, CircleDashed } from 'lucide-react';
 import { formatDate } from '@/shared/lib/format';
-import { InfoChip } from '@/shared/ui';
+import { InfoChip } from '@/shared/ui/InfoChip';
 import { stageLabel } from '../model/dictionaries';
 import { projectStatusLabels, type Project } from '../model/types';
 import styles from './ProjectHighlights.module.css';

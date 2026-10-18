@@ -4,7 +4,9 @@ import { useProject } from '@/entities/project';
 import { useSession } from '@/entities/session';
 import { ProjectEditForm } from '@/features/project/edit-project';
 import { routes } from '@/shared/config';
-import { Button, EmptyState, Skeleton } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { EmptyState } from '@/shared/ui/EmptyState';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { BackLink } from '../ui/BackLink';
 import styles from './ProjectEditPage.module.css';
 

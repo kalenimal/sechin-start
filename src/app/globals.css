@@ -5,9 +5,9 @@
   --color-primary-10: rgba(56, 113, 132, 0.1);
   --color-primary-40: rgba(56, 113, 132, 0.4);
   --color-secondary: #d64933;
-  --color-red: #d92d2d;
+  --color-red: #c62828; /* design #d92d2d, darkened for WCAG AA on tinted backgrounds */
   --color-black: #0d1423;
-  --color-dark-grey: #6d7278;
+  --color-dark-grey: #666b71; /* design #6d7278, darkened for WCAG AA on grey surfaces */
   --color-grey: #dfe3e5;
   --color-grey-hover: #d5d9db;
   --color-grey-active: #cbcfd1;
@@ -234,14 +234,25 @@ svg {
   }
 }
 
+/*
+ * Entrance used for whole pages and list items. It starts at opacity 0.01, not 0: Chrome ignores
+ * opacity-0 content for FCP/LCP, and a compositor-only fade never repaints, so metrics would stall.
+ */
+@keyframes enter {
+  from {
+    opacity: 0.01;
+    transform: translateY(12px);
+  }
+}
+
 /** Page content entrance (applied by route templates). */
 .page-enter {
-  animation: fade-up var(--duration-base) var(--ease-out) both;
+  animation: enter var(--duration-base) var(--ease-out) backwards;
 }
 
 /** Staggered entrance for lists and grids of cards. */
 .stagger > * {
-  animation: fade-up var(--duration-slow) var(--ease-out) both;
+  animation: enter var(--duration-slow) var(--ease-out) backwards;
 }
 
 .stagger > :nth-child(2) {

@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Copy } from 'lucide-react';
 import { cn } from '@/shared/lib/cn';
-import { toast } from '@/shared/ui';
+import { toast } from '@/shared/ui/Toast';
 import styles from './ProjectDetails.module.css';
 
 export function Section({ title, children }: { title: string; children: ReactNode }) {

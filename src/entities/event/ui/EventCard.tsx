@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { Clock, MapPin } from 'lucide-react';
-import { InfoChip } from '@/shared/ui';
+import { InfoChip } from '@/shared/ui/InfoChip';
 import { eventDateParts } from '../lib';
 import type { PlatformEvent } from '../model/types';
 import { EventTypeBadge } from './EventTypeBadge';

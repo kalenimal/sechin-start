@@ -3,7 +3,12 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { Delete } from 'lucide-react';
 import { expertScoreRanges, projectDirections, projectStages, type ProjectStage } from '@/entities/project';
-import { Button, ChoiceChips, Modal, RangeField, Select, TextLink } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { ChoiceChips } from '@/shared/ui/ChoiceChips';
+import { Modal } from '@/shared/ui/Modal';
+import { RangeField } from '@/shared/ui/RangeField';
+import { Select } from '@/shared/ui/Select';
+import { TextLink } from '@/shared/ui/TextLink';
 import { emptyFeedFilters, type FeedFiltersState } from './model';
 import styles from './FeedFiltersModal.module.css';
 

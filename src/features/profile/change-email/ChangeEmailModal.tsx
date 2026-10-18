@@ -7,7 +7,10 @@ import { z } from 'zod';
 import { authApi } from '@/entities/session';
 import { useAsyncAction } from '@/shared/lib/hooks/useAsyncAction';
 import { emailSchema } from '@/shared/lib/validation';
-import { Button, FormError, Modal, TextField } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { FormError } from '@/shared/ui/FormError';
+import { Modal } from '@/shared/ui/Modal';
+import { TextField } from '@/shared/ui/TextField';
 import styles from '../profile.module.css';
 
 const schema = z.object({ email: emailSchema });

@@ -4,7 +4,7 @@ import { SessionProvider } from '@/entities/session';
 import { getServerSession } from '@/entities/session/server';
 import { QueryProvider } from '@/shared/api';
 import { routes } from '@/shared/config';
-import { Toaster } from '@/shared/ui';
+import { Toaster } from '@/shared/ui/Toast';
 import { DashboardSidebar } from '@/widgets/dashboard-sidebar';
 import styles from './layout.module.css';
 

@@ -3,7 +3,7 @@
 import { useSelectedLayoutSegment } from 'next/navigation';
 import type { StartupTab } from '@/entities/startup';
 import { routes } from '@/shared/config';
-import { Tabs, type TabItem } from '@/shared/ui';
+import { Tabs, type TabItem } from '@/shared/ui/Tabs';
 
 const segmentToTab: Record<string, StartupTab> = { team: 'team', reviews: 'reviews', documents: 'documents' };
 

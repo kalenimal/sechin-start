@@ -3,13 +3,37 @@
   top: 0;
   z-index: 50;
   background: var(--color-white);
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) ease;
+  will-change: transform;
+}
+
+.scrolled {
+  box-shadow:
+    0 1px 0 var(--color-grey),
+    0 6px 20px rgba(13, 20, 35, 0.04);
+}
+
+.hidden {
+  transform: translateY(-100%);
+}
+
+/* Keyboard users tabbing into the header must always see it. */
+.hidden:focus-within {
+  transform: none;
 }
 
 .inner {
   display: flex;
   align-items: center;
-  gap: 60px;
-  height: 96px;
+  gap: 48px;
+  height: 64px;
+}
+
+.logo img {
+  width: auto;
+  height: 40px;
 }
 
 .nav {
@@ -37,12 +61,11 @@
 @media (max-width: 640px) {
   .inner {
     gap: 16px;
-    height: 72px;
+    height: 56px;
   }
 
-  .inner > a:first-child img {
-    width: 125px;
-    height: auto;
+  .logo img {
+    height: 34px;
   }
 
   .nav {
@@ -50,6 +73,6 @@
   }
 
   .login {
-    padding: 0 12px;
+    padding: 0 10px;
   }
 }

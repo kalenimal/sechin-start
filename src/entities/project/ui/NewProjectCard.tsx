@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Plus } from 'lucide-react';
-import { ChamferFrame } from '@/shared/ui';
+import { ChamferFrame } from '@/shared/ui/ChamferFrame';
 import styles from './NewProjectCard.module.css';
 
 type NewProjectCardProps = { label?: string } & (

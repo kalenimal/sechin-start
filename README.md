@@ -45,6 +45,7 @@ npm run dev            # http://localhost:3000
 | [docs/UI-KIT.md](docs/UI-KIT.md)             | токены и компоненты `shared/ui`, доступность          |
 | [docs/DATA-LAYER.md](docs/DATA-LAYER.md)     | моки, query-хуки, план перехода на реальный API       |
 | [docs/SEO.md](docs/SEO.md)                   | метаданные, JSON-LD, sitemap, чек-лист новой страницы |
+| [docs/PERFORMANCE.md](docs/PERFORMANCE.md)   | замеры Lighthouse, оптимизации, как перемерить        |
 | [docs/CONVENTIONS.md](docs/CONVENTIONS.md)   | код-стайл, стили, формы, данные                       |
 
 ## Структура

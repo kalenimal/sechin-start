@@ -5,7 +5,10 @@ import { CalendarDays, MapPin, UsersRound } from 'lucide-react';
 import { eventDateParts, EventTypeBadge, useEvent } from '@/entities/event';
 import { ParticipateButton } from '@/features/event-participation';
 import { routes } from '@/shared/config';
-import { Button, EmptyState, InfoChip, Skeleton } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { EmptyState } from '@/shared/ui/EmptyState';
+import { InfoChip } from '@/shared/ui/InfoChip';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { BackLink } from '../ui/BackLink';
 import styles from './EventPage.module.css';
 

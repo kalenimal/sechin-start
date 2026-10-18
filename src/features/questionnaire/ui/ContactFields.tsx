@@ -1,7 +1,8 @@
 'use client';
 
 import { Controller, type Control, type FieldErrors, type UseFormRegister } from 'react-hook-form';
-import { TextField, PhoneField } from '@/shared/ui';
+import { PhoneField } from '@/shared/ui/PhoneField';
+import { TextField } from '@/shared/ui/TextField';
 import { FormSection } from './FormSection';
 
 type ContactValues = { fullName: string; email: string; phone: string };

@@ -1,4 +1,4 @@
-import { SignUpSuccessPage } from '@/views/auth';
+import { SignUpSuccessPage } from '@/views/sign-up-success';
 
 export const metadata = { title: 'Анкета отправлена' };
 

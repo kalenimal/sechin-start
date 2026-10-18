@@ -4,7 +4,10 @@ import { useState } from 'react';
 import { authApi } from '@/entities/session';
 import { useAsyncAction } from '@/shared/lib/hooks/useAsyncAction';
 import { useCountdown } from '@/shared/lib/hooks/useCountdown';
-import { Button, CodeInput, FormError, TextLink } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { CodeInput } from '@/shared/ui/CodeInput';
+import { FormError } from '@/shared/ui/FormError';
+import { TextLink } from '@/shared/ui/TextLink';
 import styles from '../form.module.css';
 
 const RESEND_SECONDS = 59;

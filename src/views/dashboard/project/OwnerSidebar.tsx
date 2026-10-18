@@ -3,7 +3,8 @@ import { CompanyCard, type Project } from '@/entities/project';
 import { CompanyDetailsButton } from '@/features/project/company-details';
 import { routes } from '@/shared/config';
 import { formatDate } from '@/shared/lib/format';
-import { Button, InfoChip } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { InfoChip } from '@/shared/ui/InfoChip';
 import styles from './ProjectPage.module.css';
 
 /** Startup owner: moderation status, edit action and legal entity. */

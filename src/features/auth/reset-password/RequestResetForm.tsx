@@ -8,7 +8,10 @@ import { authApi } from '@/entities/session';
 import { routes } from '@/shared/config';
 import { useAsyncAction } from '@/shared/lib/hooks/useAsyncAction';
 import { emailSchema } from '@/shared/lib/validation';
-import { Button, FormError, TextField, TextLink } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { FormError } from '@/shared/ui/FormError';
+import { TextField } from '@/shared/ui/TextField';
+import { TextLink } from '@/shared/ui/TextLink';
 import styles from '../form.module.css';
 
 const schema = z.object({ email: emailSchema });

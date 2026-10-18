@@ -9,7 +9,7 @@ import {
   type FeedFiltersState,
 } from '@/features/project/feed-filters';
 import { pluralize } from '@/shared/lib/format';
-import { EmptyState } from '@/shared/ui';
+import { EmptyState } from '@/shared/ui/EmptyState';
 import { DashboardPage } from '@/widgets/dashboard-page';
 import { FeedList } from '../ui/FeedList';
 import styles from '../ui/Feed.module.css';

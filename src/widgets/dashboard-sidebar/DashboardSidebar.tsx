@@ -7,7 +7,8 @@ import { useNotifications } from '@/entities/notification';
 import { useSession } from '@/entities/session';
 import { routes } from '@/shared/config';
 import { cn } from '@/shared/lib/cn';
-import { Logo, MenuButton } from '@/shared/ui';
+import { Logo } from '@/shared/ui/Logo';
+import { MenuButton } from '@/shared/ui/MenuButton';
 import { navigationByRole } from './navigation';
 import styles from './DashboardSidebar.module.css';
 

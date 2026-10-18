@@ -1,7 +1,7 @@
 import { Mail, Smartphone, UserRound } from 'lucide-react';
 import type { Project } from '@/entities/project';
 import { ReviewBlock } from '@/features/expertise-review';
-import { InfoChip } from '@/shared/ui';
+import { InfoChip } from '@/shared/ui/InfoChip';
 import { Section } from '../parts';
 import styles from '../ProjectDetails.module.css';
 

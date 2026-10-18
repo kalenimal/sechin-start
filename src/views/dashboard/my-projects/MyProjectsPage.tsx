@@ -11,7 +11,9 @@ import {
 import { useSession } from '@/entities/session';
 import { routes } from '@/shared/config';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
-import { EmptyState, SearchInput, Select, type SelectOption } from '@/shared/ui';
+import { EmptyState } from '@/shared/ui/EmptyState';
+import { SearchInput } from '@/shared/ui/SearchInput';
+import { Select, type SelectOption } from '@/shared/ui/Select';
 import { DashboardPage } from '@/widgets/dashboard-page';
 import { CardsGrid } from '../ui/CardsGrid';
 import styles from '../ui/Toolbar.module.css';

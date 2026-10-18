@@ -22,21 +22,19 @@ import {
 import { useSession } from '@/entities/session';
 import { routes } from '@/shared/config';
 import { cn } from '@/shared/lib/cn';
-import {
-  Button,
-  FileUpload,
-  FormError,
-  ImageUpload,
-  MultiSelect,
-  RadioGroup,
-  RangeField,
-  Select,
-  Textarea,
-  TextField,
-  TextLink,
-  PhoneField,
-  toast,
-} from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
+import { FileUpload } from '@/shared/ui/FileUpload';
+import { FormError } from '@/shared/ui/FormError';
+import { ImageUpload } from '@/shared/ui/ImageUpload';
+import { MultiSelect } from '@/shared/ui/MultiSelect';
+import { PhoneField } from '@/shared/ui/PhoneField';
+import { RadioGroup } from '@/shared/ui/RadioGroup';
+import { RangeField } from '@/shared/ui/RangeField';
+import { Select } from '@/shared/ui/Select';
+import { TextField } from '@/shared/ui/TextField';
+import { TextLink } from '@/shared/ui/TextLink';
+import { Textarea } from '@/shared/ui/Textarea';
+import { toast } from '@/shared/ui/Toast';
 import { audienceOptions, ciPhaseOptions, editSections, ipOwnerOptions, privacyOptions, yesNoOptions } from './options';
 import { projectFormSchema, toFormValues, type ProjectFormValues } from './schema';
 import styles from './ProjectEditForm.module.css';

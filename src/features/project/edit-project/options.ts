@@ -1,4 +1,4 @@
-import type { SelectOption } from '@/shared/ui';
+import type { SelectOption } from '@/shared/ui/Select';
 
 export const audienceOptions: SelectOption[] = [
   { value: 'B2C', label: 'B2C' },

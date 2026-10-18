@@ -1,7 +1,7 @@
 import { FileCheck, FileClock, FileCog, FileUser } from 'lucide-react';
 import type { Project } from '@/entities/project';
 import { ReviewBlock } from '@/features/expertise-review';
-import { InfoChip } from '@/shared/ui';
+import { InfoChip } from '@/shared/ui/InfoChip';
 import { CopyValue, Section } from '../parts';
 import styles from '../ProjectDetails.module.css';
 
