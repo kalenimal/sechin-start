@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /sechin-start/dashboard/
+Disallow: /sechin-start/auth/
+
+Host: https://kalenimal.github.io/sechin-start/
+Sitemap: https://kalenimal.github.io/sechin-start/sitemap.xml

@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fauth\u002Fsign-up\u002F[role]","\u002Fstartups\u002F[slug]","\u002Fstartups\u002F[slug]\u002Fdocuments","\u002Fstartups\u002F[slug]\u002Freviews","\u002Fstartups\u002F[slug]\u002Fteam"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
