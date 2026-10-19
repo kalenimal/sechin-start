@@ -10,7 +10,7 @@
 Workflow `.github/workflows/pages.yml` запускается при каждом пуше в `main` (и вручную из вкладки Actions):
 
 1. `npm ci` → `npm run check` (typecheck, lint, prettier) → `npm run build` со статическим экспортом;
-2. папка `out/` публикуется через `actions/deploy-pages`.
+2. папка `out/` пушится в ветку `gh-pages` (с нуля, без истории), GitHub Pages раздаёт эту ветку.
 
 Переменные сборки задаются в workflow:
 
@@ -20,7 +20,7 @@ Workflow `.github/workflows/pages.yml` запускается при каждо�
 | `NEXT_PUBLIC_BASE_PATH` | `/<имя репозитория>`               | сайт живёт в подпапке `user.github.io/<repo>` |
 | `NEXT_PUBLIC_SITE_URL`  | `https://<owner>.github.io/<repo>` | canonical, sitemap, Open Graph, JSON-LD       |
 
-Первичная настройка (один раз): **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+Pages включается автоматически при первом пуше ветки `gh-pages`. Если нет — **Settings → Pages → Source: Deploy from a branch → `gh-pages` / `(root)`**.
 На бесплатном тарифе GitHub Pages доступен только для публичных репозиториев.
 
 ### Свой домен
