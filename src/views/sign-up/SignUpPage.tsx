@@ -30,7 +30,11 @@ export type SignUpRole = Exclude<Role, 'expert'>;
 const STEPS = ['Регистрация аккаунта', 'Подтверждение', 'Заполнение анкеты'];
 
 const copy: Record<SignUpRole, { register: string; questionnaire: string; Form: React.ComponentType }> = {
-  startup: { register: 'Регистрация аккаунта стартапа', questionnaire: 'Анкета стартапа', Form: StartupQuestionnaire },
+  startup: {
+    register: 'Регистрация аккаунта цифрового сервиса',
+    questionnaire: 'Анкета цифрового сервиса',
+    Form: StartupQuestionnaire,
+  },
   investor: {
     register: 'Регистрация аккаунта инвестора',
     questionnaire: 'Анкета инвестора',

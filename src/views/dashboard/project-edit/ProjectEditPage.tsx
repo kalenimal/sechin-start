@@ -35,7 +35,7 @@ export function ProjectEditPage({ id }: { id: string }) {
   if (user.role !== 'startup') {
     return (
       <EmptyState
-        title="Раздел доступен только стартапам"
+        title="Раздел доступен только цифровым сервисам"
         action={
           <Button href={routes.dashboard} size="m">
             На главную

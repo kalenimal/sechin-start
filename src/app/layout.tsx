@@ -14,13 +14,13 @@ const ibmPlexSans = IBM_Plex_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — медицинские стартапы, экспертиза и инвестиции`,
+    default: `${siteConfig.name} — медицинские цифровые сервисы, экспертиза и инвестиции`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
   keywords: [
-    'медицинские стартапы',
+    'медицинские цифровые сервисы',
     'MedTech',
     'Digital Health',
     'инвестиции в медицину',

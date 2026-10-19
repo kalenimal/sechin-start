@@ -11,7 +11,7 @@ export function PublicFooter() {
           © {new Date().getFullYear()} {siteConfig.organization.name}
         </p>
         <nav aria-label="Ссылки в подвале" className={styles.links}>
-          <Link href={routes.startups}>Стартапы</Link>
+          <Link href={routes.startups}>Цифровые сервисы</Link>
           <Link href={routes.auth}>Регистрация</Link>
           <Link href={routes.login}>Вход</Link>
         </nav>

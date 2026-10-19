@@ -8,7 +8,7 @@ export async function HomePage() {
   return (
     <Container as="section" className={styles.section} aria-labelledby="home-title">
       <h1 id="home-title" className={styles.title}>
-        Стартапы, развивающиеся вместе с нами
+        Цифровые сервисы, развивающиеся вместе с нами
       </h1>
       <p className="visually-hidden">
         Платформа Сеченовского Университета объединяет медицинские проекты, экспертов, инвесторов и корпорации.

@@ -13,7 +13,7 @@ export async function StartupsPage() {
   return (
     <Container as="section" className={homeStyles.section} aria-labelledby="startups-title">
       <h1 id="startups-title" className={homeStyles.title}>
-        Медицинские стартапы
+        Медицинские цифровые сервисы
       </h1>
 
       <Suspense fallback={<StartupsCatalog startups={startups} />}>
@@ -25,7 +25,7 @@ export async function StartupsPage() {
           startupListSchema(startups),
           breadcrumbSchema([
             { name: 'Главная', path: routes.home },
-            { name: 'Стартапы', path: routes.startups },
+            { name: 'Цифровые сервисы', path: routes.startups },
           ]),
         ]}
       />

@@ -8,7 +8,7 @@ import styles from './PublicHeader.module.css';
 
 const links = [
   { href: routes.home, label: 'Главная', match: (path: string) => path === '/' },
-  { href: routes.startups, label: 'Стартапы', match: (path: string) => path.startsWith('/startups') },
+  { href: routes.startups, label: 'Цифровые сервисы', match: (path: string) => path.startsWith('/startups') },
 ];
 
 export function PublicNav() {

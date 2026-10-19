@@ -4,7 +4,7 @@ import { buildMetadata } from '@/shared/lib/seo';
 
 export const metadata = buildMetadata({
   title: 'Пользовательское соглашение',
-  description: 'Условия использования платформы медицинских стартапов Сеченовского Университета.',
+  description: 'Условия использования платформы медицинских цифровых сервисов Сеченовского Университета.',
   path: routes.terms,
 });
 

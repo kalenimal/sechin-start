@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import Link from 'next/link';
 import type { Startup } from '@/entities/startup';
 import { startupSchema } from '@/entities/startup';
 import { routes } from '@/shared/config';
@@ -14,10 +15,10 @@ export function StartupLayout({ startup, children }: { startup: Startup; childre
       <nav aria-label="Хлебные крошки" className="visually-hidden">
         <ol>
           <li>
-            <a href={routes.home}>Главная</a>
+            <Link href={routes.home}>Главная</Link>
           </li>
           <li>
-            <a href={routes.startups}>Стартапы</a>
+            <Link href={routes.startups}>Цифровые сервисы</Link>
           </li>
           <li aria-current="page">{startup.name}</li>
         </ol>
@@ -32,7 +33,7 @@ export function StartupLayout({ startup, children }: { startup: Startup; childre
           startupSchema(startup),
           breadcrumbSchema([
             { name: 'Главная', path: routes.home },
-            { name: 'Стартапы', path: routes.startups },
+            { name: 'Цифровые сервисы', path: routes.startups },
             { name: startup.name, path: routes.startup(startup.slug) },
           ]),
         ]}

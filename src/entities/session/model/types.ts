@@ -3,7 +3,7 @@ export type Role = 'startup' | 'investor' | 'corporate' | 'expert';
 export const ROLES: Role[] = ['startup', 'investor', 'corporate', 'expert'];
 
 export const roleLabels: Record<Role, string> = {
-  startup: 'Стартап',
+  startup: 'Цифровой сервис',
   investor: 'Инвестор',
   corporate: 'Корпорация',
   expert: 'Эксперт',

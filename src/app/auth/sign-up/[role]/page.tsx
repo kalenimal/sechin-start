@@ -4,7 +4,7 @@ import { SignUpPage, SignUpPageFromQuery, type SignUpRole } from '@/views/sign-u
 
 const roles: SignUpRole[] = ['startup', 'investor', 'corporate'];
 const titles: Record<SignUpRole, string> = {
-  startup: 'Регистрация стартапа',
+  startup: 'Регистрация цифрового сервиса',
   investor: 'Регистрация инвестора',
   corporate: 'Регистрация корпорации',
 };

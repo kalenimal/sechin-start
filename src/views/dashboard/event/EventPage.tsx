@@ -66,7 +66,8 @@ export function EventPage({ id }: { id: string }) {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Список участников</h2>
           <p className={styles.description}>
-            Медицинские стартапы, инвесторы, представители клиник, корпораций, научных центров и экспертного сообщества
+            Медицинские цифровые сервисы, инвесторы, представители клиник, корпораций, научных центров и экспертного
+            сообщества
           </p>
           <ul className={styles.people}>
             {event.participants.map((person) => (

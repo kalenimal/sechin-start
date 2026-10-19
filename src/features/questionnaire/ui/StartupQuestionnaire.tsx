@@ -33,7 +33,7 @@ const fileList = z.array(z.object({ id: z.string(), name: z.string(), size: z.nu
 
 const schema = z
   .object({
-    name: requiredString('Укажите название стартапа'),
+    name: requiredString('Укажите название цифрового сервиса'),
     description: requiredString('Добавьте описание'),
     stage: z.enum(stageValues, { error: 'Выберите стадию' }),
     direction: z.string({ error: 'Выберите направление' }).min(1, 'Выберите направление'),
@@ -113,7 +113,7 @@ export function StartupQuestionnaire() {
         <TextField
           label="Название"
           required
-          placeholder="Введите название стартапа"
+          placeholder="Введите название цифрового сервиса"
           error={errors.name?.message}
           {...register('name')}
         />
@@ -121,7 +121,7 @@ export function StartupQuestionnaire() {
           label="Описание"
           required
           rows={6}
-          placeholder="Введите описание стартапа"
+          placeholder="Введите описание цифрового сервиса"
           error={errors.description?.message}
           {...register('description')}
         />
@@ -157,7 +157,7 @@ export function StartupQuestionnaire() {
         <TextField
           label="Сайт"
           type="url"
-          placeholder="Ссылка на сайт вашего стартапа, если он имеется"
+          placeholder="Ссылка на сайт вашего цифрового сервиса, если он имеется"
           error={errors.website?.message}
           {...register('website')}
         />

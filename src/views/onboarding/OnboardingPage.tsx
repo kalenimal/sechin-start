@@ -10,14 +10,14 @@ import styles from './OnboardingPage.module.css';
 const options = [
   {
     role: 'startup',
-    title: 'Развиваю свой стартап',
+    title: 'Развиваю свой цифровой сервис',
     description: 'Ищу экспертизу, пилоты и инвестиции',
     icon: <Rocket aria-hidden strokeWidth={1.5} />,
   },
   {
     role: 'investor',
     title: 'Ищу проекты для инвестиций',
-    description: 'Изучаю перспективные медицинские стартапы',
+    description: 'Изучаю перспективные медицинские цифровые сервисы',
     icon: <Image src="/icons/ruble.svg" alt="" width={40} height={40} />,
   },
   {

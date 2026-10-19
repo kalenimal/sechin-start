@@ -49,7 +49,7 @@ function Catalog({ startups, query }: { startups: Startup[]; query: Query }) {
         }}
       >
         <label htmlFor="startups-q" className="visually-hidden">
-          Поиск по стартапам
+          Поиск по цифровым сервисам
         </label>
         <input
           key={q}
