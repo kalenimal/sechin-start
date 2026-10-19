@@ -2,7 +2,7 @@
 
 import { LogOut } from 'lucide-react';
 import { useSession } from '@/entities/session';
-import { routes } from '@/shared/config';
+import { routes, withBasePath } from '@/shared/config';
 import { TextLink } from '@/shared/ui/TextLink';
 
 export function LogoutButton({ className }: { className?: string }) {
@@ -17,7 +17,7 @@ export function LogoutButton({ className }: { className?: string }) {
       onClick={() => {
         logout();
         // Full reload: drops all client caches of the previous user and leaves the protected layout cleanly.
-        window.location.assign(routes.home);
+        window.location.assign(withBasePath(routes.home));
       }}
     >
       Выйти из аккаунта

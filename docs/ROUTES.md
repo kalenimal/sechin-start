@@ -1,28 +1,28 @@
 # Маршруты и роли
 
-| Маршрут                                                         | Роли                                      | View                                                     |
-| --------------------------------------------------------------- | ----------------------------------------- | -------------------------------------------------------- |
-| `/`                                                             | все                                       | `views/home` — витрина стартапов                         |
-| `/startups`                                                     | все                                       | `views/startups` — каталог с поиском и фильтром          |
-| `/startups/[slug]` · `/team` · `/reviews` · `/documents`        | все                                       | `views/startup`                                          |
-| `/auth`                                                         | гость                                     | онбординг (выбор роли)                                   |
-| `/auth/login`                                                   | гость                                     | вход                                                     |
-| `/auth/reset-password` · `/new`                                 | гость                                     | восстановление пароля                                    |
-| `/auth/sign-up/[startup\|investor\|corporate]?step=1..3`        | гость                                     | регистрация                                              |
-| `/auth/sign-up/success`                                         | —                                         | анкета отправлена                                        |
-| `/dashboard`                                                    | стартап / инвестор / корпорация / эксперт | мои проекты / лента / мои запросы / заявки на экспертизу |
-| `/dashboard/projects/[id]`                                      | все                                       | проект (режим зависит от роли)                           |
-| `/dashboard/projects/[id]/edit`, `/dashboard/projects/new/edit` | стартап                                   | редактор                                                 |
-| `/dashboard/favourites`                                         | инвестор, корпорация                      | избранное                                                |
-| `/dashboard/analytics`                                          | инвестор                                  | аналитика                                                |
-| `/dashboard/requests/[id]`                                      | корпорация                                | подборка по запросу                                      |
-| `/dashboard/expertise`                                          | эксперт                                   | мои проверки                                             |
-| `/dashboard/calendar` · `/[id]`                                 | все                                       | события                                                  |
-| `/dashboard/notifications`                                      | все                                       | уведомления                                              |
-| `/dashboard/profile`                                            | все                                       | профиль                                                  |
-| `/dashboard/communication`                                      | все                                       | заглушка чата                                            |
-| `/dashboard/help`                                               | все                                       | FAQ                                                      |
-| `/api/demo-login?role=`                                         | mock-режим                                | быстрый вход                                             |
+| Маршрут                                                  | Роли                                      | View                                                     |
+| -------------------------------------------------------- | ----------------------------------------- | -------------------------------------------------------- |
+| `/`                                                      | все                                       | `views/home` — витрина стартапов                         |
+| `/startups`                                              | все                                       | `views/startups` — каталог с поиском и фильтром          |
+| `/startups/[slug]` · `/team` · `/reviews` · `/documents` | все                                       | `views/startup`                                          |
+| `/auth`                                                  | гость                                     | онбординг (выбор роли)                                   |
+| `/auth/login`                                            | гость                                     | вход                                                     |
+| `/auth/reset-password` · `/new`                          | гость                                     | восстановление пароля                                    |
+| `/auth/sign-up/[startup\|investor\|corporate]?step=1..3` | гость                                     | регистрация                                              |
+| `/auth/sign-up/success`                                  | —                                         | анкета отправлена                                        |
+| `/dashboard`                                             | стартап / инвестор / корпорация / эксперт | мои проекты / лента / мои запросы / заявки на экспертизу |
+| `/dashboard/project?id=`                                 | все                                       | проект (режим зависит от роли)                           |
+| `/dashboard/project/edit?id=` (`id=new` — новый проект)  | стартап                                   | редактор                                                 |
+| `/dashboard/favourites`                                  | инвестор, корпорация                      | избранное                                                |
+| `/dashboard/analytics`                                   | инвестор                                  | аналитика                                                |
+| `/dashboard/request?id=`                                 | корпорация                                | подборка по запросу                                      |
+| `/dashboard/expertise`                                   | эксперт                                   | мои проверки                                             |
+| `/dashboard/calendar` · `/event?id=`                     | все                                       | события                                                  |
+| `/dashboard/notifications`                               | все                                       | уведомления                                              |
+| `/dashboard/profile`                                     | все                                       | профиль                                                  |
+| `/dashboard/communication`                               | все                                       | заглушка чата                                            |
+| `/dashboard/help`                                        | все                                       | FAQ                                                      |
+| `/auth/demo?role=&next=`                                 | mock-режим                                | быстрый вход                                             |
 
 ## Режимы страницы проекта
 

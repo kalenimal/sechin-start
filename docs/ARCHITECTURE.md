@@ -6,13 +6,12 @@
 
 ```
 src/
-├─ app/        Next.js: маршруты, layouts, templates, metadata, sitemap/robots/manifest, route handlers
+├─ app/        Next.js: маршруты, layouts, templates, metadata, sitemap/robots/manifest
 ├─ views/      слой «pages» из FSD: сборка экрана из виджетов и фич
 ├─ widgets/    самостоятельные крупные блоки интерфейса
 ├─ features/   пользовательские сценарии (действие пользователя + его UI)
 ├─ entities/   бизнес-сущности: типы, API, query-хуки, «тупые» карточки
-├─ shared/     переиспользуемое без бизнес-смысла: ui-kit, api, config, lib
-└─ middleware.ts
+└─ shared/     переиспользуемое без бизнес-смысла: ui-kit, api, config, lib
 ```
 
 Слой pages переименован в `views`, потому что папка `pages/` в Next.js зарезервирована под Pages Router.
@@ -23,14 +22,7 @@ src/
 - Импорт только **вниз**: `app → views → widgets → features → entities → shared`.
 - Внутри слоя слайсы не импортируют друг друга. Исключение — сущности, ссылающиеся на `project` (см. ниже).
 - Снаружи импортируем только **публичный API** слайса (`index.ts`), во внутренние файлы не лезем.
-- `app/*` — тонкая обёртка: читает params/searchParams, задаёт metadata и рендерит view.
-
-### Дополнительные публичные точки входа
-
-| Файл                         | Зачем                                                                |
-| ---------------------------- | -------------------------------------------------------------------- |
-| `entities/session/server.ts` | `getServerSession()`: только сервер (`server-only`, `next/headers`)  |
-| `entities/session/cookie.ts` | `decodeSession`, `SESSION_COOKIE` для edge-middleware без React-кода |
+- `app/*` — тонкая обёртка: читает params, задаёт metadata и рендерит view. Query-параметры читаются на клиенте (`useSearchParams` внутри `<Suspense>`), потому что сайт статический.
 
 ### Cross-import сущностей
 
@@ -71,28 +63,35 @@ FSD 2.1 допускает такие связи. Если связей стан
 
 ## Состояние и данные
 
-| Тип состояния                        | Инструмент                                                                               |
-| ------------------------------------ | ---------------------------------------------------------------------------------------- |
-| Серверные данные (проекты, запросы…) | TanStack Query, ключи в `entities/*/api`                                                 |
-| Сессия                               | Zustand через контекст (отдельный стор на запрос, без утечек между пользователями в SSR) |
-| Формы                                | react-hook-form + zod                                                                    |
-| Тосты                                | Zustand (только клиент), `toast.success()` из `shared/ui`                                |
-| Локальный UI                         | `useState`                                                                               |
+| Тип состояния                        | Инструмент                                                                     |
+| ------------------------------------ | ------------------------------------------------------------------------------ |
+| Серверные данные (проекты, запросы…) | TanStack Query, ключи в `entities/*/api`                                       |
+| Сессия                               | Zustand через контекст, стор создаётся в `SessionProvider` после чтения cookie |
+| Формы                                | react-hook-form + zod                                                          |
+| Тосты                                | Zustand (только клиент), `toast.success()` из `shared/ui`                      |
+| Локальный UI                         | `useState`                                                                     |
 
 Подробно о моках и переходе на реальный API — в [DATA-LAYER.md](./DATA-LAYER.md).
 
 ## Рендеринг
 
-| Зона                      | Режим                                                                                       |
-| ------------------------- | ------------------------------------------------------------------------------------------- |
-| `/`, `/startups/[slug]/*` | SSG (`generateStaticParams`, `dynamicParams = false`)                                       |
-| `/startups`               | динамический (поиск по `searchParams`), без `q` индексируется                               |
-| `/auth/*`                 | статика, client-only формы                                                                  |
-| `/dashboard/*`            | динамический: layout читает cookie на сервере, экраны — клиентские компоненты с React Query |
+| Зона                      | Режим                                                                 |
+| ------------------------- | --------------------------------------------------------------------- |
+| `/`, `/startups/[slug]/*` | SSG (`generateStaticParams`, `dynamicParams = false`)                 |
+| `/startups`               | SSG с полным списком; поиск и фильтр по тегу применяются в браузере   |
+| `/auth/*`                 | SSG; шаг регистрации (`?step=`) читается на клиенте, в HTML — шаг 1   |
+| `/dashboard/*`            | SSG-оболочка; сессия и данные — в браузере (React Query поверх моков) |
+
+Весь сайт — статика: нет middleware, route handlers и серверного чтения cookie. Поэтому одна и та же сборка
+работает на GitHub Pages (`output: 'export'`), Vercel или любом статическом хостинге — см. [DEPLOY.md](./DEPLOY.md).
+Страницы с id (`/dashboard/project?id=`) принимают его query-параметром: у созданных пользователем записей
+нет заранее сгенерированной страницы.
 
 ## Авторизация
 
 1. Сессия хранится в cookie `sp_session` (в моках — JSON, пишется на клиенте).
-2. `middleware.ts` не пускает гостей в `/dashboard/*`, а авторизованных уводит с `/auth` и `/auth/login`.
-3. `app/dashboard/layout.tsx` ещё раз проверяет сессию на сервере и передаёт пользователя в `SessionProvider`.
-4. `/dashboard` рендерит домашний экран по роли: `MyProjectsPage`, `ProjectFeedPage`, `MyRequestsPage` или `ExpertiseRequestsPage`.
+2. `app/dashboard/SessionGate.tsx` читает cookie в браузере: гостя отправляет на `/auth/login?next=…`, пользователя передаёт в `SessionProvider`. До проверки показывается пустая оболочка.
+3. `app/auth/RedirectIfSignedIn.tsx` уводит авторизованных с `/auth` и `/auth/login`.
+4. Демо-режим: вход с любой почтой и паролем, роль выбирается в форме; зарегистрированная почта входит в свой аккаунт.
+
+Когда появится бэкенд, проверку стоит вернуть на сервер (middleware + httpOnly cookie) и отказаться от статического экспорта. 5. `/dashboard` рендерит домашний экран по роли: `MyProjectsPage`, `ProjectFeedPage`, `MyRequestsPage` или `ExpertiseRequestsPage`.

@@ -16,7 +16,14 @@ export function decodeSession(raw: string | undefined | null): SessionUser | nul
   }
 }
 
-/** Client-side only. Mock auth keeps the session in a cookie so server components & middleware can read it. */
+/** Client-side only. Reads the mock session; the site is static, so there is no server to read it for us. */
+export function readSessionCookie(): SessionUser | null {
+  if (typeof document === 'undefined') return null;
+  const entry = document.cookie.split('; ').find((part) => part.startsWith(`${SESSION_COOKIE}=`));
+  return decodeSession(entry?.slice(SESSION_COOKIE.length + 1));
+}
+
+/** Client-side only. Mock auth keeps the session in a cookie (a real backend would set an httpOnly one). */
 export function writeSessionCookie(user: SessionUser | null) {
   if (typeof document === 'undefined') return;
   document.cookie = user

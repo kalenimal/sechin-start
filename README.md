@@ -3,7 +3,7 @@
 Платформа Сеченовского Университета для медицинских стартапов, инвесторов, корпораций и экспертов.
 Вёрстка по макету Figma **SechinPlatform** (страницы Design и UI KIT). Бэкенда пока нет: логика работает на моках.
 
-**Прод:** https://sechin-platform.vercel.app
+**Демо:** https://kalenimal.github.io/sechin-start/ (GitHub Pages, автодеплой из `main`, см. [docs/DEPLOY.md](docs/DEPLOY.md))
 
 ## Стек
 
@@ -26,14 +26,8 @@ npm run dev            # http://localhost:3000
 
 ### Демо-доступ
 
-| Роль       | Почта               | Пароль     |
-| ---------- | ------------------- | ---------- |
-| Стартап    | `startup@demo.ru`   | `demo1234` |
-| Инвестор   | `investor@demo.ru`  | `demo1234` |
-| Корпорация | `corporate@demo.ru` | `demo1234` |
-| Эксперт    | `expert@demo.ru`    | `demo1234` |
-
-Быстрый вход без формы: `/api/demo-login?role=expert`. Письма не отправляются: на шаге подтверждения введите любые 6 цифр или нажмите «Продолжить».
+Вход принимает **любую почту и пароль**, роль (стартап, инвестор, корпорация, эксперт) выбирается в форме.
+Быстрый вход без формы: `/auth/demo?role=expert`. Письма не отправляются: на шаге подтверждения введите любые 6 цифр или нажмите «Продолжить».
 Данные, изменённые в кабинетах, хранятся в `localStorage`; чтобы сбросить их, очистите storage сайта.
 
 ## Документация
@@ -46,6 +40,7 @@ npm run dev            # http://localhost:3000
 | [docs/DATA-LAYER.md](docs/DATA-LAYER.md)     | моки, query-хуки, план перехода на реальный API       |
 | [docs/SEO.md](docs/SEO.md)                   | метаданные, JSON-LD, sitemap, чек-лист новой страницы |
 | [docs/PERFORMANCE.md](docs/PERFORMANCE.md)   | замеры Lighthouse, оптимизации, как перемерить        |
+| [docs/DEPLOY.md](docs/DEPLOY.md)             | GitHub Pages, автодеплой, статическая сборка          |
 | [docs/CONVENTIONS.md](docs/CONVENTIONS.md)   | код-стайл, стили, формы, данные                       |
 
 ## Структура

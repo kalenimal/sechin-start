@@ -39,6 +39,14 @@ const demoUsers: StoredUser[] = [
   },
 ];
 
+/** Mock mode: the demo account of a role, without the password (used by the quick demo login link). */
+export function getDemoUser(role: Role): SessionUser | null {
+  const user = demoUsers.find((item) => item.role === role);
+  if (!user) return null;
+  const { password: _password, ...session } = user;
+  return session;
+}
+
 const USERS_KEY = 'sp_mock_users';
 
 function readUsers(): StoredUser[] {
@@ -63,11 +71,16 @@ function saveUser(user: StoredUser) {
 const strip = ({ password: _password, ...user }: StoredUser): SessionUser => user;
 const normalize = (email: string) => email.trim().toLowerCase();
 
-export async function login(email: string, password: string): Promise<SessionUser> {
+/**
+ * Demo mode: any e-mail and password sign in. A registered e-mail keeps its account; otherwise the chosen
+ * role's demo profile is used with the entered e-mail, so the cabinet already has data to show.
+ */
+export async function login(email: string, _password: string, role: Role = 'startup'): Promise<SessionUser> {
   await delay(600);
-  const user = readUsers().find((candidate) => candidate.email === normalize(email));
-  if (!user || user.password !== password) throw new ApiError('Неверная электронная почта или пароль', 401);
-  return strip(user);
+  const known = readUsers().find((candidate) => candidate.email === normalize(email));
+  if (known) return strip(known);
+  const demo = demoUsers.find((user) => user.role === role) ?? demoUsers[0];
+  return { ...strip(demo), email: normalize(email) };
 }
 
 export async function checkEmailAvailable(email: string): Promise<void> {

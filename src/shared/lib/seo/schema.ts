@@ -1,6 +1,16 @@
 import { siteConfig } from '@/shared/config';
 
-export const absoluteUrl = (path: string) => new URL(path, siteConfig.url).toString();
+/**
+ * Absolute URL of a site path. Keeps the sub-path of siteConfig.url (GitHub Pages serves the site from
+ * /<repo>/) and adds the trailing slash every route has (trailingSlash: true), so URLs match canonicals.
+ */
+export const absoluteUrl = (path: string) => {
+  if (/^https?:\/\//.test(path)) return path;
+  const [pathname, query] = path.split('?');
+  const isFile = /\.[a-z0-9]+$/i.test(pathname);
+  const normalized = isFile || pathname.endsWith('/') ? pathname : `${pathname}/`;
+  return `${siteConfig.url.replace(/\/$/, '')}${normalized}${query ? `?${query}` : ''}`;
+};
 
 export function organizationSchema() {
   return {
@@ -17,7 +27,7 @@ export function websiteSchema() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: siteConfig.name,
-    url: siteConfig.url,
+    url: absoluteUrl('/'),
     inLanguage: 'ru-RU',
     potentialAction: {
       '@type': 'SearchAction',

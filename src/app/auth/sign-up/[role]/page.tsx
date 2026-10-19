@@ -1,5 +1,6 @@
+import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
-import { SignUpPage, type SignUpRole } from '@/views/sign-up';
+import { SignUpPage, SignUpPageFromQuery, type SignUpRole } from '@/views/sign-up';
 
 const roles: SignUpRole[] = ['startup', 'investor', 'corporate'];
 const titles: Record<SignUpRole, string> = {
@@ -8,16 +9,25 @@ const titles: Record<SignUpRole, string> = {
   corporate: 'Регистрация корпорации',
 };
 
-type Props = { params: Promise<{ role: string }>; searchParams: Promise<{ step?: string }> };
+type Props = { params: Promise<{ role: string }> };
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return roles.map((role) => ({ role }));
+}
 
 export async function generateMetadata({ params }: Props) {
   const { role } = await params;
   return { title: titles[role as SignUpRole] ?? 'Регистрация' };
 }
 
-export default async function Page({ params, searchParams }: Props) {
-  const [{ role }, { step }] = await Promise.all([params, searchParams]);
+export default async function Page({ params }: Props) {
+  const { role } = await params;
   if (!roles.includes(role as SignUpRole)) notFound();
-  const requestedStep = Math.min(Math.max(Number(step) || 1, 1), 3);
-  return <SignUpPage role={role as SignUpRole} requestedStep={requestedStep} />;
+  return (
+    <Suspense fallback={<SignUpPage role={role as SignUpRole} requestedStep={1} />}>
+      <SignUpPageFromQuery role={role as SignUpRole} />
+    </Suspense>
+  );
 }

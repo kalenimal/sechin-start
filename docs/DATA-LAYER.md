@@ -17,7 +17,8 @@
 
 - Письма не отправляются: код подтверждения — любые 6 цифр, либо кнопка «Продолжить» без кода.
 - Демо-аккаунты зашиты в `entities/session/api/authApi.ts`; новые регистрации сохраняются в `sp_mock_users`.
-- `/api/demo-login?role=…` сразу ставит cookie сессии. Отключается переменной `NEXT_PUBLIC_MOCK_API=false`.
+- Вход принимает любую почту и пароль: роль берётся из формы, профиль — у демо-аккаунта этой роли.
+- `/auth/demo?role=…` сразу ставит cookie сессии. Отключается переменной `NEXT_PUBLIC_MOCK_API=false`.
 - Статистика аналитики генерируется детерминированно по дате, поэтому график стабилен между перезагрузками.
 
 ## Query-хуки
@@ -43,4 +44,4 @@ useToggleFavourite() / useRequestAccess() / useUpdateProject(id);
 4. **Middleware.** Проверяйте подпись токена (JWT/opaque), а не просто разбирайте JSON.
 5. **Файлы.** `FileUpload` и `ImageUpload` сейчас отдают метаданные и data URL; при подключении бэкенда загружайте файлы через presigned URL.
 6. **Каталог стартапов.** Оставьте SSG с `revalidate` (ISR) или `generateStaticParams` из API.
-7. Удалите `app/api/demo-login`, `shared/api/storage.ts` и `entities/*/model/mock.ts`, когда они перестанут быть нужны.
+7. Удалите `app/auth/demo`, `shared/api/storage.ts` и `entities/*/model/mock.ts`, когда они перестанут быть нужны.

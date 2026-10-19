@@ -1,1 +1,1 @@
-export { SignUpPage, type SignUpRole } from './SignUpPage';
+export { SignUpPage, SignUpPageFromQuery, type SignUpRole } from './SignUpPage';

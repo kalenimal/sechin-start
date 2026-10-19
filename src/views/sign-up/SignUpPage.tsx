@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useSyncExternalStore } from 'react';
+import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { RegisterForm } from '@/features/auth/register';
 import { useSession, type Role } from '@/entities/session';
 import { routes } from '@/shared/config';
+import { useHydrated } from '@/shared/lib/hooks/useHydrated';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { AuthShell, AuthText, Stepper } from '@/widgets/auth-shell';
 
@@ -41,15 +42,6 @@ const copy: Record<SignUpRole, { register: string; questionnaire: string; Form: 
     Form: CorporateQuestionnaire,
   },
 };
-
-const subscribeNoop = () => () => {};
-/** false during SSR / hydration, true afterwards — pending registration lives in sessionStorage (client only). */
-const useHydrated = () =>
-  useSyncExternalStore(
-    subscribeNoop,
-    () => true,
-    () => false,
-  );
 
 export function SignUpPage({ role, requestedStep }: { role: SignUpRole; requestedStep: number }) {
   const router = useRouter();
@@ -118,4 +110,10 @@ export function SignUpPage({ role, requestedStep }: { role: SignUpRole; requeste
       )}
     </AuthShell>
   );
+}
+
+/** Reads `?step=` on the client; render inside <Suspense> (the static HTML is step 1, used as the fallback). */
+export function SignUpPageFromQuery({ role }: { role: SignUpRole }) {
+  const step = Number(useSearchParams().get('step')) || 1;
+  return <SignUpPage role={role} requestedStep={Math.min(Math.max(step, 1), 3)} />;
 }
