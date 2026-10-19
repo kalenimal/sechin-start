@@ -92,6 +92,5 @@ FSD 2.1 допускает такие связи. Если связей стан
 1. Сессия хранится в cookie `sp_session` (в моках — JSON, пишется на клиенте).
 2. `app/dashboard/SessionGate.tsx` читает cookie в браузере: гостя отправляет на `/auth/login?next=…`, пользователя передаёт в `SessionProvider`. До проверки показывается пустая оболочка.
 3. `app/auth/RedirectIfSignedIn.tsx` уводит авторизованных с `/auth` и `/auth/login`.
-4. Демо-режим: вход с любой почтой и паролем, роль выбирается в форме; зарегистрированная почта входит в свой аккаунт.
 
-Когда появится бэкенд, проверку стоит вернуть на сервер (middleware + httpOnly cookie) и отказаться от статического экспорта. 5. `/dashboard` рендерит домашний экран по роли: `MyProjectsPage`, `ProjectFeedPage`, `MyRequestsPage` или `ExpertiseRequestsPage`.
+Когда появится бэкенд, проверку стоит вернуть на сервер (middleware + httpOnly cookie) и отказаться от статического экспорта. 4. `/dashboard` рендерит домашний экран по роли: `MyProjectsPage`, `ProjectFeedPage`, `MyRequestsPage` или `ExpertiseRequestsPage`.
